@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+
 def enumeratee(collection):
     """
     >>> l=['a','b','c']
@@ -9,7 +10,7 @@ def enumeratee(collection):
     """
     i = 0
     it = iter(collection)
-    while 1:
+    while True:
         yield (i, next(it))
         i += 1
 

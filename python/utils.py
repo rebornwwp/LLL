@@ -119,6 +119,7 @@ def nthstr(n):
         return "%sth" % n
     return {1: "%sst", 2: "%snd", 3: "%srd"}.get(n % 10, "%sth") % n
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
