@@ -43,3 +43,13 @@ if hasattr(a, '__hash__'):
     s.add(a)
 """
 
+
+"""
+这个函数中*表示在*之后不应该出现位置参数，但是关键字参数是允许的。
+def hero(a,b,c,*,units="meter"):
+
+def hero(*, paper="hello", copies="hello"): 这个函数调用的时候，只能使用关键字参数
+
+"""
+
+

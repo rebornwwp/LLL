@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+
 def restack(stack, index=0):
     """
     return the element at index after moving it to the top of the stack.
@@ -14,6 +15,7 @@ def restack(stack, index=0):
     x = stack.pop(index)
     stack.append(x)
     return x
+
 
 def listget(lst, ind, default=None):
     """
@@ -29,6 +31,7 @@ def listget(lst, ind, default=None):
         return default
     return lst[ind]
 
+
 def intget(integer, default=None):
     """
         >>> intget('3')
@@ -42,12 +45,14 @@ def intget(integer, default=None):
     except (TypeError, ValueError):
         return default
 
+
 def dictreverse(mapping):
     """
         >>> dictreverse({2:1,3:4})
         {1: 2, 4: 3}
     """
     return {v: k for k, v in mapping.items()}
+
 
 def dictinc(dictionary, element):
     """
@@ -66,6 +71,7 @@ def dictinc(dictionary, element):
     dictionary[element] += 1
     return dictionary[element]
 
+
 def dictadd(*dicts):
     """
         >>> dictadd({1: 0, 2: 0}, {2: 1, 3: 1})
@@ -76,6 +82,7 @@ def dictadd(*dicts):
         result.update(dct)
     return result
 
+
 def numify(string):
     """
     Removes all non-digit characters from `string`.
@@ -85,6 +92,7 @@ def numify(string):
     '12312312'
     """
     return ''.join([s for s in str(string) if s.isdigit()])
+
 
 def denumify(string, pattern):
     """
@@ -99,6 +107,7 @@ def denumify(string, pattern):
         else:
             out.append(c)
     return ''.join(out)
+
 
 def nthstr(n):
     """
@@ -120,7 +129,15 @@ def nthstr(n):
     return {1: "%sst", 2: "%snd", 3: "%srd"}.get(n % 10, "%sth") % n
 
 
+def list_find(lst, target):
+    for index, value in enumerate(lst):
+        if value == target:
+            break
+        else:
+            return -1
+        return index
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-
