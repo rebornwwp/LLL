@@ -31,7 +31,7 @@ print(a)
 # 一句求闰年的方法
 
 leaps = [year for year in range(1900, 2000)
-         if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)]
+        if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)]
 print(leaps)
 
 # 集合类型中，set()中，其添加的对象必须是可哈希运算的对象及对象有个__hash__()的特殊方法，
@@ -51,5 +51,4 @@ def hero(a,b,c,*,units="meter"):
 def hero(*, paper="hello", copies="hello"): 这个函数调用的时候，只能使用关键字参数
 
 """
-
 

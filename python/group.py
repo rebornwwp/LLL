@@ -25,7 +25,7 @@ def group(seq, size):
 
 
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+    import rrr
+    rrr.testmod()
     print(hello)
 

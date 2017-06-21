@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+
 def uniq(seq, key=None):
     """
         >>> uniq([9,0,2,1,0])
@@ -22,4 +23,3 @@ def uniq(seq, key=None):
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-
