@@ -14,6 +14,7 @@ def enumeratee(collection):
         yield (i, next(it))
         i += 1
 
+
 if __name__ == "__main__":
     s = ['a', 'b', 'c']
     print(list(enumeratee(s)))

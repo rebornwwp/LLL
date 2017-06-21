@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+
 class Storage(dict):
     """
     对字典数据结构的扩展可以将"obj.foo"与"obj['foo']"等效的用法
@@ -23,7 +24,9 @@ class Storage(dict):
     def __repr__(self):
         return '<Storage ' + dict.__repr__(self) + '>'
 
+
 storage = Storage
+
 
 def storify(mapping, *requireds, **defaults):
     _unicode = defaults.pop('_unicode', False)

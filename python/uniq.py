@@ -17,8 +17,8 @@ def uniq(seq, key=None):
             continue
         containers.add(key(v))
         result.append(v)
-
     return result
+
 
 if __name__ == "__main__":
     import doctest

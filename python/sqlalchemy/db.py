@@ -52,6 +52,7 @@ def UserInfo(Base):
     link = Column(String(64))
     user_id = Column(Integer, ForeignKey('user.id'))
 
+
 article_tag = Table(
     'article_tag', Base.metadata,
     Column('article_id', Integer, ForeignKey('article.id')),

@@ -17,6 +17,7 @@ from sqlalchemy.orm import relationship, sessionmaker
 engine = create_engine("mysql+pymysql://root:a13880358857@localhost:3306/blog")
 Base = declarative_base()
 
+
 class User(Base):
 
     __tablename__ = 'users'
@@ -106,7 +107,7 @@ if __name__ == '__main__':
     faker_categories = [Category(name=faker.word()) for i in range(5)]
     session.add_all(faker_categories)
 
-    faker_tags= [Tag(name=faker.word()) for i in range(20)]
+    faker_tags = [Tag(name=faker.word()) for i in range(20)]
     session.add_all(faker_tags)
 
     for i in range(100):
