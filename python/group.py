@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+
 def group(seq, size):
     """
         >>> list(group([1,2,3,4], 2))
@@ -25,7 +26,5 @@ def group(seq, size):
 
 
 if __name__ == "__main__":
-    import rrr
-    rrr.testmod()
-    print(hello)
-
+    import doctest
+    doctest.testmod()

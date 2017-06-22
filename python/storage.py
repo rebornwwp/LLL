@@ -38,12 +38,9 @@ def storify(mapping, *requireds, **defaults):
         if _unicode and isinstance(s, str): return to_unicode(s)
         else: return s
 
-    def getvalue(x):
-        if
-
 
 if __name__ == "__main__":
-    o = storage(a = 1)
+    o = storage(a=1)
     print(o.a)
     del o.a
     #print(o.a)
