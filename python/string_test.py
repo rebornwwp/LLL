@@ -58,4 +58,3 @@ def make_adder(addend):
 a = make_adder(1)  #产生一个闭包,addend为1,注意return的是adder
 b = make_adder(2)  #产生另一个闭包,addend为2,注意return的是adder
 print (a(100), b(100))  #a(100)就相当于adder(100),adden之前为1,因此返回100+1
-
