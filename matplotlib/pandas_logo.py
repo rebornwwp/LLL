@@ -7,6 +7,7 @@ import numpy as np
 
 rcParams["mathtext.fontset"] = "cm"
 
+
 def fnx():
     return np.random.randint(5, 50, 10)
 
@@ -45,10 +46,4 @@ plt.figtext(
     size=16,
     color="#5a89a4"
 )
-
-
-
-
-
-
 plt.show()
