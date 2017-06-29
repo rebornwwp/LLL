@@ -27,3 +27,21 @@ from cassandra.cqlengine.connection import setup
 setup(['127.0.0.1'], 'db_name')
 ```
 
+# paging large queries
+
+# user defined types
+已经在cassandra数据库中有了创建的新的type，但是python并不知道我们数据库中定义的类型是怎样的，
+所以需要用python定义一个类，这样通过这个中间媒介，实现从python代码到数据库中数据的转化。
+
+1. Registering a Class to Map to a UDT
+2. Using UDTs Without Registering Them
+
+# Security
+
+1. Authentication
+2. custom authenticators
+3. protocol v1 authentication
+4. ssl
+
+# work with dates and times
+
