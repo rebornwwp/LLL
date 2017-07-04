@@ -11,6 +11,7 @@ class SnippetSerializer(serializers.Serializer):
     linenos = serializers.BooleanField(required=False)
     language = serializers.ChoiceField(choices=LANGUAGE_CHOICES, default='python')
     style = serializers.ChoiceField(choices=STYLE_CHOICES, default='friendly')
+    highlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
 
     def create(self, validated_data):
         return Snippet.objects.create(**validated_data)
@@ -22,16 +23,15 @@ class SnippetSerializer(serializers.Serializer):
         instance.language = validated_data.get('language', instance.language)
         instance.style = validated_data.get('style', instance.style)
         instance.save()
-        return instance
-
+        return instance 
     class Meta:
         model = Snippet
-        fields = ('id', 'title', 'code', 'linenos', 'language', 'style', 'owner')
+        fields = ('url', 'id', 'title', 'code', 'linenos', 'language', 'style', 'owner', 'highlight')
 
 
 class UserSerializer(serializers.ModelSerializer):
-    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Snippet.objects.all())
+    snippets = serializers.HyperlinkedRelatedField(many=True, view_name='snippet-detail', read_only=True)
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'snippets')
+        fields = ('url', 'id', 'username', 'snippets')

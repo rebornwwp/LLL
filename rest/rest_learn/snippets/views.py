@@ -175,12 +175,12 @@ class UserDetail(generics.RetrieveAPIView):
 
 
 class SnippetHighlight(generics.GenericAPIView):
-    queryset = Snippetl.objects.all()
+    queryset = Snippet.objects.all()
     renderer_classes = (renderers.StaticHTMLRenderer, )
 
     def get(self, request, *args, **kwargs):
         snippet = self.get_object()
-        return Response(snippet.highlighted)
+        return Response(snippet.highlight)
 
 
 @api_view(['GET'])
