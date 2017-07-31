@@ -11,3 +11,17 @@ Web 应用程序最重要的 REST 原则是，客户端和服务器之间的交�
 
 另一个重要的 REST 原则是分层系统，这表示组件无法了解它与之交互的中间层以外的组件。通过将系统知识限制在单个层，可以限制整个系统的复杂性，促进了底层的独立性。
 当 REST 架构的约束条件作为一个整体应用时，将生成一个可以扩展到大量客户端的应用程序。它还降低了客户端和服务器之间的交互延迟。统一界面简化了整个系统架构，改进了子系统之间交互的可见性。REST 简化了客户端和服务器的实现。
+
+# post put patch方法的区别
+
+ The fundamental difference between the POST and PUT requests is reflected in the different meaning of the Request-URI.
+The URI in a POST request identifies the resource that will handle the enclosed entity.
+That resource might be a data-accepting process, a gateway to some other protocol, or a separate entity that accepts annotations.
+In contrast, the URI in a PUT request identifies the entity enclosed with the request --
+the user agent knows what URI is intended and the server MUST NOT attempt to apply the request to some other resource.
+
+* POST = 新增
+* GET = 读取
+* PUT = 更新(Replace (Create or Update)))(数据存在的话，就直接整体替换)
+* DELETE = 删除
+* patch = 局部跟新(partial update) 数据已经存在，不是重新覆盖，而是将数据中的某些属性替换
