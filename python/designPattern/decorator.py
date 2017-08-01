@@ -47,4 +47,18 @@ class sugerDecorator(drinkDecorator):
         self.beverage = beverage
 
     def getName(self):
-        return self.beverage
+        return self.beverage.getName() + '+suger'
+
+    def getPrice(self):
+        return self.beverage.getPrice() + 0.5
+
+def main():
+    coke_cola = coke()
+    print(coke_cola.getName())
+    print(coke_cola.getPrice())
+    ice_coke = iceDecorator(coke_cola)
+    print(ice_coke.getName())
+    print(ice_coke.getPrice())
+
+if __name__ == '__main__':
+    main()
