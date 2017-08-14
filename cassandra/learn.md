@@ -45,3 +45,6 @@ setup(['127.0.0.1'], 'db_name')
 
 # work with dates and times
 
+
+## key的不同
+https://stackoverflow.com/questions/24949676/difference-between-partition-key-composite-key-and-clustering-key-in-cassandra
