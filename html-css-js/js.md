@@ -70,3 +70,96 @@ if (a>b)
 x=a+b
 }
 ```
+# 运算符
+```
++ - * / % ++ -- = += -= *= /= %= 
+```
+
+# 条件运算符
+```
+==
+=== 绝对相等
+!=
+!==
+>
+<
+>=
+<=
+
+条件运算符
+
+&&
+||
+!
+```
+# 条件语句
+```
+if (time<10)
+  {
+  x="Good morning";
+  }
+else if (time<20)
+  {
+  x="Good day";
+  }
+else
+  {
+  x="Good evening";
+  }
+
+
+switch(n)
+{
+case 1:
+  执行代码块 1
+  break;
+case 2:
+  执行代码块 2
+  break;
+default:
+ n 与 case 1 和 case 2 不同时执行的代码
+}
+```
+
+# 循环
+```
+for (语句 1; 语句 2; 语句 3)
+  {
+  被执行的代码块
+  }
+
+var person={fname:"John",lname:"Doe",age:25}; 
+
+for (x in person)
+  {
+  txt=txt + person[x];
+  }
+
+while (条件)
+  {
+  需要执行的代码
+  }
+
+do
+  {
+  x=x + "The number is " + i + "<br>";
+  i++;
+  }
+while (i<5);
+```
+
+# 错误
+```
+try
+  {
+  //在这里运行代码
+  }
+catch(err)
+  {
+  //在这里处理错误
+  }
+
+throw exception
+```
+# 
+
