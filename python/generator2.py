@@ -40,8 +40,8 @@ def delegating_gen():
     yield from subgen()
 
 g = delegating_gen()
-print(inspect.getgeneratorlocals(g))
+print(inspect.getgeneratorstate(g))
 next(g)
-print(inspect.getgeneratorlocals(g))
+print(inspect.getgeneratorstate(g))
 g.close()
-print(inspect.getgeneratorlocals(g))
+print(inspect.getgeneratorstate(g))
