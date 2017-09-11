@@ -45,3 +45,4 @@ next(g)
 print(inspect.getgeneratorstate(g))
 g.close()
 print(inspect.getgeneratorstate(g))
+

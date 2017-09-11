@@ -8,7 +8,6 @@ class OrderedDictTestCase(unittest.TestCase):
         self.ordSet = OrderedSet(list('abc'))
 
     def tearDown(self):
-        self.ordSet.dispose()
         self.ordSet = None
 
     def test_init(self):
@@ -30,7 +29,7 @@ class OrderedDictTestCase(unittest.TestCase):
         self.assertTrue(bool(self.ordSet))
 
     def test_len(self):
-        self.assertEqual(len(self.ordSet, 3))
+        self.assertEqual(len(self.ordSet), 3)
 
 
 if __name__ == '__main__':

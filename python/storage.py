@@ -27,18 +27,6 @@ class Storage(dict):
 
 storage = Storage
 
-
-def storify(mapping, *requireds, **defaults):
-    _unicode = defaults.pop('_unicode', False)
-    to_unicode = safeunicode
-    if _uncode is not False and hasattr(_unicode, "__call__"):
-        to_unicode = _unicode
-
-    def unicodify(s):
-        if _unicode and isinstance(s, str): return to_unicode(s)
-        else: return s
-
-
 if __name__ == "__main__":
     o = storage(a=1)
     print(o.a)
