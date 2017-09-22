@@ -5,5 +5,3 @@ setup(["127.0.0.1"], 'demodb')
 
 user = NamedTable('demodb', 'users')
 print user.objects()[0]
-
-
