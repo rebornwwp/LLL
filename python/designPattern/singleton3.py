@@ -1,5 +1,5 @@
 # encoding=utf-8
-# this Singleton can be implemented in python2. 
+# this Singleton can just be implemented in python2. 
 
 class Singleton(type):
     def __init__(cls, name, bases, dict):

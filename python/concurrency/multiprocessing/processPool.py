@@ -7,7 +7,8 @@ def f(x):
 
 
 if __name__ == "__main__":
-    with Pool(processes=4) as pool:
+    with Pool(4) as pool:
+        print(pool.map(f, [1,2,3]))
         print(pool.map(f, range(10)))
 
         for i in pool.imap_unordered(f, range(10)):
