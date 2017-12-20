@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
         """
@@ -13,7 +14,7 @@ class Solution(object):
         lenA = self.length(headA)
         lenB = self.length(headB)
         diff = lenA - lenB
-        if diff > 0 :
+        if diff > 0:
             while diff > 0:
                 headA = headA.next
                 diff -= 1
