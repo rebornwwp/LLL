@@ -1,7 +1,7 @@
 # tips 1 *args **kwargs
 
 ## 基本用法
-```
+``` python
 # 例子
 def print_everything(*args):
     for count, thing in enumerate(args):
@@ -23,7 +23,7 @@ apple = fruit
 * *args 基于位置的参数可以无限化，传入之后args是tuple类型的
 * **kwargs基于key-value的参数无限化，传入之后kwargs是dict类型
 
-```
+``` python
 #用法一 将一个tuple或者一个list传入到*args中
 l = [1,2,3,4,5]
 print_everything(*l)
@@ -39,7 +39,7 @@ table_thing(**d)
 
 ### 用于subclassing
 
-```
+``` python
 class Foo(object):
     def __init__(self, value1, value2):
         print(value1, value2)
@@ -59,13 +59,13 @@ pdb
 ## 开启调试模式的两种方法
 ### 从命令行调试
 
-```
+``` bash
 $ python -m pdb my_script.py
 ```
 
 ### 从代码中设置调试
 
-```
+``` python
 import pdb
 
 def make_bread():
@@ -100,7 +100,7 @@ In simple words it is the process of taking an item from something e.g a list. W
 
 Generators are iterators, but you can only iterate over them once.It’s because they do not store all the values in memory, they generate the values on the fly.  大多数情况下都是通过函数产生的，不是通过return，而是通过yield。生成器在数据量大的数据结构中，其不会同时对数据分配空间，这样就比返回list的函数要占用更少的资源。
 
-```
+``` python
 def generator_function():
     for i in range(10):
         yield i
@@ -137,7 +137,7 @@ print(next(gen))
 #         StopIteration
 ```
 上面的例子都是通过函数中用yield的方法创建生成器的，下面将通过一个内建函数**iter**，其可以从一个iterable的变量中生成iterator。
-```
+``` python
 my_string = "Yahoo"
 my_iter = iter(my_string)
 print(next(my_iter))
@@ -146,21 +146,21 @@ print(next(my_iter))
 # tips 4 map, filter and reduce
 
 ## map
-```
+``` python
 items = [1,2,3,4,5]
 squared = list(map(lambda x: x * x, items))
 ```
 
 ## filter
 
-```
+```python
 number_lsit = range(-5, 5)
 less_than_zero = list(filter(lambda x: x < 0, number_list))
 ```
 
 ## reduce
 
-```
+```python
 from functools import reduce
 items = [1,2,3,4,5]
 product = reduce(lambda x, y: x * y, items)
@@ -170,7 +170,7 @@ product = reduce(lambda x, y: x * y, items)
 
 not contain duplicate values
 
-```
+```python
 # bad example
 some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
 
@@ -193,7 +193,7 @@ print(duplicates)
 
 ### intersection
 
-```
+```python
 valid = set(['yellow', 'red', 'blue', 'green', 'black'])
 input_set = set(['red', 'brown'])
 print(input_set.intersection(valid))
@@ -202,7 +202,7 @@ print(input_set.intersection(valid))
 
 ### difference
 
-```
+``` python
 valid = set(['yellow', 'red', 'blue', 'green', 'black'])
 input_set = set(['red', 'brown'])
 print(input_set.difference(valid))
