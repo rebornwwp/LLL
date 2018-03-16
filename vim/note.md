@@ -9,3 +9,5 @@ I" .................... inserts " at the beginning
 <Esc><Esc> ............ finishes start
 2fdl. ................. second 'd' l (goes right) . (repeats insertion)
 ```
+## vim tips
+https://www.cs.oberlin.edu/~kuperman/help/vim/windows.html
