@@ -294,7 +294,7 @@ print(profile())
 
 总结：利用`tuple`，`list`，`dict`解决多参数返回的问题
 
-## tips 9 mutation
+# tips 9 mutation
 
 ``` python
 foo = ['hi']
@@ -317,7 +317,7 @@ def add_to(num, target=None):
     return target
 ```
 
-## tips 10 \_\_slots\_\_ Magic
+# tips 10 `__slots__` Magic
 
 ``` python
 # good
