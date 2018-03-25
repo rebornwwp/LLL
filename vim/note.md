@@ -11,3 +11,13 @@ I" .................... inserts " at the beginning
 ```
 ## vim tips
 https://www.cs.oberlin.edu/~kuperman/help/vim/windows.html
+
+# zsh plugin
+
+## install command
+
+```
+brew install zsh-syntax-highlighting
+brew install autojump
+brew install zsh-autosuggestions
+```
