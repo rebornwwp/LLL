@@ -11,8 +11,6 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        if head is None or head.next is None:
-            return False
         slow = fast = head
         while fast and fast.next:
             slow = slow.next
