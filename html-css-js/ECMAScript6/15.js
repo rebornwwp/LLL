@@ -152,7 +152,7 @@ for (let e in ess) {
 //   console.log(e);
 // }
 
-下面是两种对对象遍历
+// 下面是两种对对象遍历
 // for (var key of Object.keys(someObject)) {
 //   console.log(key + ': ' + someObject[key]);
 // }
