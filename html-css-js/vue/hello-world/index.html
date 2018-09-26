@@ -1,0 +1,108 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="./node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- app in index.js -->
+    <div id="app">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+        <input v-model="message">
+
+        <span v-if="seen">Now you see me</span>
+        <span v-else>now you dont</span>
+
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+
+        <ol>
+            <todo-item></todo-item>
+            <todo-item></todo-item>
+            <todo-item></todo-item>
+        </ol>
+
+        <ol>
+            <todo-items v-for="items in groceryList" v-bind:todos="items" v-bind:key="items.id">
+            </todo-items>
+        </ol>
+    </div>
+
+    <!-- app2 in index.js -->
+    <div id="app-2">
+        <span v-bind:title="titleMessage">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+    </div>
+
+    <!-- app3 in index.js -->
+    <div id="demo">{{ fullName }}</div>
+
+    <!-- app4 in index.js -->
+    <div id="computed-setter">{{ fullName }}</div>
+
+    <!-- app5 in index.js -->
+    <div id="watch-example">
+        <p>
+            Ask a yes/no question:
+            <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
+    </div>
+
+    <!-- app6 in index.js 绑定html的class属性 -->
+    <div id="html-class" class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">
+        <!-- 条件渲染 -->
+        <div v-if="ok">
+            Now you see me
+        </div>
+        <div v-else>
+            Now you don't
+        </div>
+    </div>
+    <div id="list-render">
+        <!-- v-for for lists -->
+        <li v-for="(item, index) of items">
+            {{ parentMessage }} - {{ index }} - {{ item }}
+        </li>
+        <!-- v-for for object -->
+        <li v-for="value, key, index) in object">
+            {{ index }} . {{ key }} : {{ value }}
+        </li>
+        <!-- 对list对象过滤，和函数式一样，不对app内部的data做改变 -->
+        <li v-for="n in evenNumbers">
+            {{ n }}
+        </li>
+        <!-- 阻止单击事件继续传播 -->
+        <a v-on:click.stop="doThis">hello</a>
+
+        <!-- 提交事件不再重载页面 -->
+        <form v-on:submit.prevent="onSubmit"></form>
+
+        <!-- 修饰符可以串联 -->
+        <a v-on:click.stop.prevent="doThat"></a>
+
+        <!-- 只有修饰符 -->
+        <form v-on:submit.prevent></form>
+
+        <!-- 添加事件监听器时使用事件捕获模式 -->
+        <!-- 即元素自身触发的事件先在此处处理，然后才交由内部元素进行处理 -->
+        <div v-on:click.capture="doThis">...</div>
+
+        <!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+        <!-- 即事件不是从内部元素触发的 -->
+        <div v-on:click.self="doThat">...</div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
