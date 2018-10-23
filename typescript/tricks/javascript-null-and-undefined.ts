@@ -25,7 +25,7 @@ foo(undefined)
 foo("hello world")
 
 // checking for root level undefined
-let someGlobal
+let someGlobal = 10
 if (typeof someGlobal !== 'undefined') {
   console.log(someGlobal)
 } else {
