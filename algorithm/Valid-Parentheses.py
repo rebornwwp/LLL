@@ -22,8 +22,23 @@ class Solution(object):
             return False
         return True
 
+    def isValid1(self, s):
+        a = "([{"
+        b = ")]}"
+        c = []
+        for i in s:
+            if i in a:
+                c.append(i)
+            elif i in b:
+                if len(c) == 0 and i:
+                    return False
+                if a.index(c.pop()) != b.index(i):
+                    return False
+        return len(c) == 0
+
 
 if __name__ == '__main__':
     s = '()'
     solution = Solution()
     print(solution.isValid(s))
+    print(solution.isValid1(s))
