@@ -50,20 +50,16 @@ class Solution:
         return head
 
     def removeNthFromEnd1(self, head, n):
-        count = 0
-        a = head
-        while a:
-            count += 1
-            a = a.next
-        if count == n:
-            return None
         p1 = head
         p2 = head
         temp = n
         while temp > 0:
             p1 = p1.next
             temp -= 1
-        while p1 and p2:
+        # n 等于链表的长度的时候
+        if not p1:
+            return head.next
+        while p1.next:
             p1 = p1.next
             p2 = p2.next
         p2.next = p2.next.next
