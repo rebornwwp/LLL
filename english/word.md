@@ -15,3 +15,4 @@ Asynchronous 异步的
   2. 赔罪 赔偿 补偿 if you want amends when you have harmed someone, you show that you are sorry by doing something to please them
 5. unidirectional 单向的 react中的单向绑定和双向绑定就是用的这两个单词
 6. Bi-directional 双向的
+7. corpus 全集, 词料库
