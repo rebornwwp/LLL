@@ -17,11 +17,8 @@ class Solution:
             return True
 
         i = start
-        while i < end:
-            if sequence[i] < sequence[end]:
-                i += 1
-            else:
-                break
+        while i < end and sequence[i] < sequence[end]:
+            i += 1
 
         for index in range(i):
             if sequence[index] > sequence[end]:
@@ -32,3 +29,9 @@ class Solution:
                 return False
 
         return self.helper(start, i - 1, sequence) and self.helper(i, end - 1, sequence)
+
+
+if __name__ == "__main__":
+    s = Solution()
+    print(s.VerifySquenceOfBST([1, 2, 3, 4, 5, 6]))
+    print(s.VerifySquenceOfBST([1, 2, 3, 10, 11, 12, 6]))

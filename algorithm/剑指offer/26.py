@@ -24,7 +24,8 @@ class Solution:
         self.li.append(root.val)
 
         expectNumber = expectNumber - root.val
-        if expectNumber == 0 and not root.left and not root.right:
+        isLeaf = not root.left and not root.right
+        if expectNumber == 0 and isLeaf:
             self.liAll.append(self.li[:])
 
         self.FindPath(root.left, expectNumber)
