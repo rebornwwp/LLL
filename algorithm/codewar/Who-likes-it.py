@@ -11,6 +11,7 @@ Implement a function likes :: [String] -> String, which must take in input array
 For more than 4 names, the number in and 2 others simply increases.
 """
 
+
 def likes(names):
     """
         >>> likes([])
@@ -24,13 +25,13 @@ def likes(names):
     """
     length = len(names)
     pattern = {
-            0: "no one likes this",
-            1: "{} likes this",
-            2: "{} and {} like this",
-            3: "{}, {} and {} like this",
-            4: "{}, {} and {other} others like this"
-            }
-    return pattern[min(4, length)].format(*names[:3], other=length-2)
+        0: "no one likes this",
+        1: "{} likes this",
+        2: "{} and {} like this",
+        3: "{}, {} and {} like this",
+        4: "{}, {} and {other} others like this"
+    }
+    return pattern[min(4, length)].format(*names[:3], other=length - 2)
 
 
 if __name__ == "__main__":

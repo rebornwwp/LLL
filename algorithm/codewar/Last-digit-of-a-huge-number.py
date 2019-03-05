@@ -13,6 +13,7 @@ Corner cases: we assume that 0 ^ 0 = 1 and that lastDigit of an empty list equal
 This kata generalizes Last digit of a large number; you may find useful to solve it beforehand.
 '''
 
+
 def last_digit(lst):
     if len(lst) == 0:
         return 0
@@ -27,7 +28,7 @@ def last_digit(lst):
     return pow(lst[0], prev, 10)
 
 
-print(last_digit([3,4,2]))
-print(last_digit([5,6,7]))
+print(last_digit([3, 4, 2]))
+print(last_digit([5, 6, 7]))
 print(last_digit([12, 30, 21]))
 print(last_digit([499942, 898102, 846073]))

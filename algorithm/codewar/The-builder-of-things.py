@@ -52,8 +52,7 @@ jane.spoke # => ["Jane says: hello"]
 Note: Most of the test cases have already been provided for you so that you can see how the Thing object is supposed to work.
 '''
 
+
 class Thing (object):
     def __init__(self, name):
         self.name = name
-
-

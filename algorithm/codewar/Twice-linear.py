@@ -15,6 +15,7 @@ Consider a sequence u where u is defined as follows:
     #Note: Focus attention on efficiency
 """
 
+
 def dbl_linear(n):
     # ai --> 2*x+1 序列的索引
     # bi --> 3*x+1 序列的索引
@@ -37,6 +38,7 @@ def dbl_linear(n):
             bi += 1
             eq += 1
     return tmp[-1]
+
 
 if __name__ == "__main__":
     print(dbl_linear(50))

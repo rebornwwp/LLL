@@ -19,14 +19,30 @@ class Solution:
         result = []
         for i, num in enumerate(nums):
             if num != 0:
-                result.append(i+1)
+                result.append(i + 1)
+        return result
+
+    def findDisappearedNumbers1(self, nums):
+        i = 0
+        while i < len(nums):
+            print(nums)
+            temp = nums[i] - 1
+            if nums[i] == 0 or nums[temp] == 0:
+                i += 1
+            else:
+                nums[i], nums[temp] = nums[temp], 0
+
+        result = []
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                result.append(i + 1)
         return result
 
 
 def main():
     solutin = Solution()
     a = [4, 3, 2, 7, 8, 2, 3, 1]
-    print(solutin.findDisappearedNumbers(a))
+    print(solutin.findDisappearedNumbers1(a))
 
 
 if __name__ == '__main__':

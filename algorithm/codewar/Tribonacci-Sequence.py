@@ -18,12 +18,14 @@ So, if we are to start our Tribonacci sequence with [1,1,1] as a starting input 
         [Personal thanks to Professor Jim Fowler on Coursera for his awesome classes that I really recommend to any math enthusiast and for showing me this mathematical curiosity too with his usual contagious passion :)]
 """
 
-def tribonacci(signature,n):
+
+def tribonacci(signature, n):
     if n <= 3:
         return signature[:n]
-    for i in range(n-3):
-        signature.append(signature[i] + signature[i+1] + signature[i+2])
+    for i in range(n - 3):
+        signature.append(signature[i] + signature[i + 1] + signature[i + 2])
     return signature
 
+
 if __name__ == "__main__":
-    print(tribonacci([1,1,1],10))
+    print(tribonacci([1, 1, 1], 10))

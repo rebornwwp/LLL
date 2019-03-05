@@ -26,14 +26,16 @@ sum(5) # 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3
 sum(10) # 42
 '''
 
+
 def exp_sum(n):
     if n < 0:
         return 0
     tmp_list = [1] + [0] * n
-    for i in range(1, n+1):
-        for j in range(i, n+1):
-            tmp_list[j] += tmp_list[j-i]
+    for i in range(1, n + 1):
+        for j in range(i, n + 1):
+            tmp_list[j] += tmp_list[j - i]
     print(tmp_list)
     return tmp_list[-1]
+
 
 print(exp_sum(10))

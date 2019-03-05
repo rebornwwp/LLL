@@ -34,9 +34,7 @@ class Solution(object):
             linked_list = linked_list.next
         return len
 
-
-class Solution2(object):
-    def getIntersectionNode(self, headA, headB):
+    def getIntersectionNode1(self, headA, headB):
         """
         :type head1, head1: ListNode
         :rtype: ListNode
@@ -50,3 +48,17 @@ class Solution2(object):
             pa = headB if pa is None else pa.next
             pb = headA if pb is None else pb.next
         return pa
+
+    def getIntersectionNode1(self, headA, headB):
+        store = set()
+
+        a = headA
+        while a:
+            store.add(a)
+            a = a.next
+
+        b = headB
+        while b:
+            if b in store:
+                return b
+            b = b.next

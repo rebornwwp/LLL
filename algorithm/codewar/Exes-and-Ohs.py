@@ -10,6 +10,7 @@ Examples input/output:
     XO("zzoo") => false
 """
 
+
 def xo(s):
     diff = 0
     for i in s:
