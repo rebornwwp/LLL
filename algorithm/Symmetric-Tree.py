@@ -18,10 +18,10 @@ class Solution(object):
             return self.compare_left_right(root.left, root.right)
 
     def compare_left_right(self, leftNode, rightNode):
-        if leftNode == None and rightNode == None:
+        if leftNode is None and rightNode is None:
             return True
         if leftNode and rightNode and leftNode.val == rightNode.val:
-            return self.compare_left_right(leftNode.left, rightNode.right) & self.compare_left_right(leftNode.right, rightNode.left)
+            return self.compare_left_right(leftNode.left, rightNode.right) and self.compare_left_right(leftNode.right, rightNode.left)
         return False
 
 
