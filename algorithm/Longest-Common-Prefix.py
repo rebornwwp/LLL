@@ -12,8 +12,32 @@ class Solution(object):
                     return strs[0][:i]
         return strs[0]
 
+    def longestCommonPrefix1(self, strs):
+        if not strs:
+            return ''
+        i = -1
+        for i, s in enumerate(zip(*strs)):
+            # if all(map(lambda x: x == s[0], s)):
+            if len(set(s)) == 1:
+                continue
+            else:
+                return strs[0][:i]
+        return strs[0][:i + 1]
+
+    def longestCommonPrefix2(self, strs):
+        ans = ''
+        count = 0
+        for i, s in enumerate(zip(*strs)):
+            if len(set(s)) == 1 and i == count:
+                ans += s[0]
+                count += 1
+            else:
+                break
+        return ans
+
 
 if __name__ == '__main__':
     solution = Solution()
     strs = ['leet', 'leetscode', 'leetcode', 'leetscode']
-    print(solution.longestCommonPrefix(strs))
+    strs1 = ['']
+    print(solution.longestCommonPrefix2(strs))
