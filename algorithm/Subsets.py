@@ -31,6 +31,20 @@ class Solution:
 
         return result
 
+    def subsets1(self, nums):
+        if not nums:
+            return [[]]
+
+        def dfs(nums, temp, ans):
+            ans.append(temp[:])
+
+            for i in range(len(nums)):
+                dfs(nums[i+1:], temp + [nums[i]], ans)
+
+        ans = []
+        dfs(nums, [], ans)
+        return ans
+
 
 s = Solution()
-print(s.subsets([1, 2, 3]))
+print(s.subsets1([1, 2, 3]))

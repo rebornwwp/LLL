@@ -1,3 +1,5 @@
+# encoding=utf8
+
 # Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
 # A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
 #
@@ -96,9 +98,37 @@ class Solution:
             temp.append(maps[i])
         return [''.join(item) for item in product(*temp)]
 
+    def letterCombinations3(self, digits):
+        """
+        functional programming
+        变相的dfs
+        """
+        maps = {
+            "2": 'abc',
+            "3": 'def',
+            "4": 'ghi',
+            "5": 'jkl',
+            "6": 'mno',
+            "7": 'pqrs',
+            "8": 'tuv',
+            "9": 'wxyz',
+        }
+        return reduce(lambda acc, d: [x + y for x in acc for y in maps[d]], digits, [''])
+
+    def letterCombinations4(self, digits):
+        """
+        dfs
+        """
+        ans = []
+        def dfs(digits, index, curr, ans):
+            if index == len(digits):
+                return
+            ans.append(curr)
+
 
 if __name__ == "__main__":
     s = Solution()
     print(s.letterCombinations("23"))
     print(s.letterCombinations1("23"))
     print(s.letterCombinations2("23"))
+    print(s.letterCombinations3("23"))
