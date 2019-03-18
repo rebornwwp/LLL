@@ -69,10 +69,10 @@ class Solution:
         """
         if index == len(digits):
             result.append(current_str)
-        else:
-            for c in maps[digits[index]]:
-                temp = current_str + c
-                self.dfs(digits, maps, temp, index + 1, result)
+            return
+        for c in maps[digits[index]]:
+            temp = current_str + c
+            self.dfs(digits, maps, temp, index + 1, result)
 
     def letterCombinations2(self, digits):
         """
@@ -96,9 +96,42 @@ class Solution:
             temp.append(maps[i])
         return [''.join(item) for item in product(*temp)]
 
+    def letterCombinations3(self, digits):
+        if not digits:
+            return []
+        d = [" ", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
+        ans = [""]
+        for digit in digits:
+            tmp = []
+            for s in ans:
+                for c in d[ord(digit) - ord('0')]:
+                    tmp.append(s + c)
+            ans = tmp
+
+        return ans
+
+    def letterCombinations4(self, digits):
+        def dfs(digits, d, l, cur, ans):
+            if l == len(digits):
+                if l > 0:
+                    ans.append("".join(cur))
+                return
+
+            for c in d[ord(digits[l]) - ord('0')]:
+                cur[l] = c
+                dfs(digits, d, l + 1, cur, ans)
+
+        d = [" ", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
+        cur = [' ' for _ in range(len(digits))]
+        ans = []
+        dfs(digits, d, 0, cur, ans)
+        return ans
+
 
 if __name__ == "__main__":
     s = Solution()
     print(s.letterCombinations("23"))
     print(s.letterCombinations1("23"))
     print(s.letterCombinations2("23"))
+    print(s.letterCombinations3("23"))
+    print(s.letterCombinations4("23"))

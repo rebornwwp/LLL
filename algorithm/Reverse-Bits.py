@@ -3,4 +3,4 @@ class Solution:
     # @return an integer
     def reverseBits(self, n):
         b = bin(n)
-        return int(b+'0'*(32-len(b)), 2)
+        return int(b + '0' * (32 - len(b)), 2)
