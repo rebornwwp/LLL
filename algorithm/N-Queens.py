@@ -42,7 +42,6 @@ class Solution(object):
         locations = []
         dfs(n, 0, [], locations)
 
-        import copy
         ans = []
         for i in range(len(locations)):
             l = [['.'] * n for _ in range(n)]
