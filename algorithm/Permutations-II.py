@@ -32,7 +32,7 @@ class Solution(object):
                     continue
                 temp.append(nums[i])
                 visited.append(nums[i])
-                dfs(nums[0:i] + nums[i+1:], temp, ans)
+                dfs(nums[0:i] + nums[i + 1:], temp, ans)
                 temp.pop()
 
         ans = []

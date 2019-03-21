@@ -32,7 +32,7 @@ class Solution(object):
                 return
 
             for x in range(i, n):
-                temp.append(x+1)
+                temp.append(x + 1)
                 dfs(n, x + 1, temp, k, ans)
                 temp.pop()
 
