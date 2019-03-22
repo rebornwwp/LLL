@@ -47,11 +47,33 @@ class Solution(object):
 
         return maxLength
 
+    def lengthOfLongestSubstring2(self, s):
+
+        if len(s) <= 1:
+            return len(s)
+        max_s = 1
+        l = [False] * 256
+
+        j = 0
+        i = 0
+        while i < len(s):
+            while j < len(s):
+                ord_j = ord(s[j])
+                if not l[ord_j]:
+                    l[ord_j] = True
+                    j += 1
+                else:
+                    break
+            max_s = max(max_s, j - i)
+            l[ord(s[i])] = False
+            i += 1
+        return max_s
+
 
 def main():
     solution = Solution()
-    s = "abcabcbb"
-    print(solution.lengthOfLongestSubstring(s))
+    s = "aab"
+    print(solution.lengthOfLongestSubstring2(s))
 
 
 if __name__ == '__main__':
