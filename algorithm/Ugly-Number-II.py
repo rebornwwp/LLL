@@ -23,19 +23,19 @@ class Solution(object):
         ans = [1]
         x, y, z = 0, 0, 0
         while i != n:
-            m = min(x * 2, y * 3, z * 5)
+            m = min(ans[x] * 2, ans[y] * 3, ans[z] * 5)
 
-            if ans != m:
+            if ans[-1] != m:
                 i += 1
-            ans = m
+                ans.append(m)
 
-            if m == x * 2:
+            if m == ans[x] * 2:
                 x += 1
-            elif m == y * 3:
+            elif m == ans[y] * 3:
                 y += 1
-            elif m == z * 5:
+            elif m == ans[z] * 5:
                 z += 1
-        return ans
+        return ans[-1]
 
 
 s = Solution()
