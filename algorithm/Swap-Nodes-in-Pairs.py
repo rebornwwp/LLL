@@ -18,6 +18,8 @@ class Solution(object):
         :rtype: ListNode
         """
         h = head
-        while h.next is not None and h.next.next:
+        while not (h is None or h.next is None):
             h.val, h.next.val = h.next.val, h.val
             h = h.next.next
+
+        return head
