@@ -6,9 +6,9 @@
 # https://leetcode.com/problems/number-of-1-bits/description/
 #
 # algorithms
-# Easy (42.31%)
-# Total Accepted:    246.9K
-# Total Submissions: 582.6K
+# Easy (42.35%)
+# Total Accepted:    247K
+# Total Submissions: 582.8K
 # Testcase Example:  '00000000000000000000000000001011'
 #
 # Write a function that takes an unsigned integer and return the number of '1'
@@ -71,8 +71,9 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        count = 0
+        ans = 0
         while n:
-            count += 1
+            ans += 1
             n = n & (n - 1)
-        return count
+        return ans
+
