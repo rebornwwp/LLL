@@ -36,6 +36,14 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        a = 0
+        while m != n:
+            m >>= 1
+            n >>= 1
+            a += 1
+        return m << a
+
+    def rangeBitwiseAnd2(self, m, n):
         a, b = m.bit_length(), n.bit_length()
         if a != b:
             return 0
@@ -58,3 +66,7 @@ class Solution(object):
                     break
             ans += '0' * (len(bin(m)) - len(ans))
         return int(ans, 2)
+
+
+s = Solution()
+print(s.rangeBitwiseAnd(5, 7))
