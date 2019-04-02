@@ -31,7 +31,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func maximalSquare(matrix [][]byte) int {
@@ -47,10 +46,8 @@ func maximalSquare(matrix [][]byte) int {
 		for j := 1; j < len(dp[0]); j++ {
 			if matrix[i-1][j-1] == '1' {
 				temp := min(min(dp[i-1][j], dp[i-1][j-1]), dp[i][j-1])
-				dp[i][j] = (int(math.Sqrt(float64(temp))) + 1) * (int(math.Sqrt(float64(temp))) + 1)
-				if ans < dp[i][j] {
-					ans = dp[i][j]
-				}
+				dp[i][j] = temp + 1
+				ans = max(ans, dp[i][j])
 			} else {
 				dp[i][j] = 0
 			}
@@ -59,7 +56,7 @@ func maximalSquare(matrix [][]byte) int {
 	for i := range dp {
 		fmt.Println(dp[i])
 	}
-	return ans
+	return ans * ans
 }
 
 func min(a, b int) int {
@@ -67,6 +64,13 @@ func min(a, b int) int {
 		return b
 	}
 	return a
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
 
 // func main() {
