@@ -32,14 +32,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"sort"
 )
-
-type byFistElement [][]int
-
-func (l byFistElement) Len() int           { return len(l) }
-func (l byFistElement) Swap(i, j int)      { l[i], l[j] = l[j], l[i] }
-func (l byFistElement) Less(i, i int) bool { return l[i][0] < l[j][0] }
 
 func main() {
 	var N, V int
@@ -51,23 +44,26 @@ func main() {
 		temp := []int{v, w}
 		vw[i] = temp
 	}
-	sort.Sort(vw)
-	fmt.Println(maxWeight(vw, V))
+	fmt.Println(maxWeight(vw, N, V))
 }
 
-func maxWeight(vw [][]int, maxV int) int {
-	dp := make([]int, maxV+1)
-	temp := 0
-	for i := range vw {
-		for j := 1; j <= temp && temp <= maxV; j++ {
-			if dp[j] > 0 && j+vw[i][0] < len(dp) {
-				dp[j+vw[i][0]] = max(dp[j+vw[i][0]], dp[j]+vw[i][1])
+func maxWeight(nums [][]int, N int, V int) int {
+	// init dp (N+1)x(V+1)
+	dp := make([][]int, N+1)
+	for i := range dp {
+		dp[i] = make([]int, V+1)
+	}
+	//
+	for i := 1; i <= N; i++ {
+		for j := 1; j <= V; j++ {
+			if j >= nums[i-1][0] {
+				dp[i][j] = max(dp[i-1][j], dp[i-1][j-nums[i-1][0]]+nums[i-1][1])
+			} else {
+				dp[i][j] = dp[i-1][j]
 			}
 		}
-		temp += vw[i][0]
-		dp[vw[i][0]] = max(vw[i][1], dp[vw[i][0]])
 	}
-	return dp[len(dp)-1]
+	return dp[N][V]
 }
 
 func max(a, b int) int {
