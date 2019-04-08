@@ -31,10 +31,54 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	fmt.Println(numSquares1(7168))
+	fmt.Println(numSquares2(12))
+}
+func numSquares3(n int) int {
+	for n%4 == 0 {
+		n /= 4
+	}
+	if n%8 == 7 {
+		return 4
+	}
+	var j int
+	for i := 0; i*i <= n; i++ {
+		j = int(math.Sqrt(float64(n - i*i)))
+		if j*j+i*i == n {
+			return isGreaterZero(i) + isGreaterZero(j)
+		}
+	}
+	return 3
+}
+func isGreaterZero(n int) int {
+	if n > 0 {
+		return 1
+	}
+	return 0
+}
+
+func numSquares2(n int) int {
+	// All perfect squares less than n
+	dp := make([]int, n+1)
+	for i := range dp {
+		dp[i] = n + 1
+	}
+	dp[0] = 0
+
+	for i := 1; i <= n; i++ {
+		fmt.Println(dp)
+		for j := 1; j*j <= n; j++ {
+			if i-j*j >= 0 {
+				dp[i] = min(dp[i], dp[i-j*j]+1)
+			}
+		}
+	}
+	return dp[n]
 }
 
 // time limit exceeded
@@ -50,7 +94,7 @@ func dfs(l []int, ans int, n int) int {
 	if n == 0 {
 		return ans
 	}
-	count := 1<<31 - 1
+	count := n + 1
 	var quotient, reminder int
 	for i := range l {
 		quotient = int(n / l[i])
@@ -69,7 +113,7 @@ func numSquares(n int) int {
 }
 
 func helper(l []int, n int) int {
-	m := 1<<31 - 1
+	m := n + 1
 	dp := make([][]int, len(l)+1)
 	for i := range dp {
 		dp[i] = make([]int, n+1)
