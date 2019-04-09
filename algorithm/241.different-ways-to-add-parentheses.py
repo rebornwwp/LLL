@@ -42,22 +42,23 @@
 
 class Solution:
     def diffWaysToCompute(self, input):
-        def dfs(input, ans):
-            if '-' not in input and '+' not in input and '*' not in input:
-                return int(input)
-            ans = []
-            for i, val in enumerate(input):
-                if val == '-':
-                    ans.append(dfs(
-                        input[0:i]) - self.diffWaysToCompute(input[i+1:])))
-                if val == '+':
-                    ans.append(self.diffWaysToCompute(
-                        input[0:i]) + self.diffWaysToCompute(input[i+1:]))
-                if val == '*':
-                    ans.append(self.diffWaysToCompute(
-                        input[0:i]) * self.diffWaysToCompute(input[i+1:]))
         ans = []
-        dfs(input, ans)
+        for i, val in enumerate(input):
+            if val in '-+*':
+                # 符号左边可能的所有值
+                left = self.diffWaysToCompute(input[0:i])
+                # 符号右边可能的所有值
+                right = self.diffWaysToCompute(input[i+1:])
+                for num1 in left:
+                    for num2 in right:
+                        if val == '-':
+                            ans.append(num1 - num2)
+                        if val == '+':
+                            ans.append(num1 + num2)
+                        if val == '*':
+                            ans.append(num1 * num2)
+        if len(ans) == 0:
+            ans.append(int(input))
         return ans
 
 s = Solution()
