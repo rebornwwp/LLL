@@ -20,4 +20,3 @@ IO.inspect(map["hello"])
 IO.inspect(%{:foo => "bar", :foo => "hello world"})
 # 不用=> 的形式
 IO.inspect(%{foo: "bar", hello: "world"})
-
