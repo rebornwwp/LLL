@@ -4,17 +4,31 @@
 
 
 class Solution(object):
-    stack1 = []
-    stack2 = []
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
 
     def push(self, node):
+        """
+        :param node: int
+        :return: int
+        """
         self.stack1.append(node)
 
     def pop(self):
-        while self.stack1:
-            self.stack2.append(self.stack1.pop())
-        if self.stack2:
-            result = self.stack2.pop()
-            while self.stack2:
-                self.stack1.append(self.stack2.pop())
+        """
+        :return: int
+        """
+        result = self.top()
+        self.stack2.pop()
+        return result
+
+    def top(self):
+        """
+        :return: int
+        """
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        result = self.stack2[-1]
         return result

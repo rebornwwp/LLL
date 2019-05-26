@@ -19,8 +19,6 @@ class Solution:
                     return array
                 temp_i = i
                 temp_j = j
-                print(array)
-                print(temp_i, temp_j)
                 while temp_i < temp_j:
                     array[temp_j], array[temp_j - 1] = array[temp_j - 1], array[temp_j]
                     temp_j = temp_j - 1
