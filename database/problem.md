@@ -12,5 +12,9 @@ sqlite> pragma temp_store = 1;
 sqlite> pragma temp_store_directory = '/directory/with/lots/of/space';
 ```
 
+## Access to postgresql
 
+```
+postgres psql -h 192.168.99.100 -p 5432 -U postgres --password
+```
 
