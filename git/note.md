@@ -42,7 +42,7 @@ git commit --amend
 
 ```
 # 有一个readme.md的文件加入了暂存区，我们现在撤销暂存
-git rest HEAD readme.md
+git reset HEAD readme.md
 ```
 
 ## 撤销对文件的修改
@@ -184,4 +184,19 @@ git branch --no-merged
 
 # delete a branch
 git branch -d branch-name
+```
+
+# 场景说明及操作
+
+有a和b两个commit（都为git push到远程代码仓库），a在b之前，我们想做的是撤销b，然后将b所做的修改一并commit到a上？
+
+做法
+``` bash
+git reset --soft HEAD^
+
+# 查看暂存区
+git status .
+
+# commit
+git commit --amend
 ```
