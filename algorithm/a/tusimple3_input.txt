@@ -1,0 +1,12 @@
+NE: O
+NW: X
+SW: O
+SE:
+  NE: O
+  NW:
+    NE: O
+    NW: X
+    SW: X
+    SE: O
+  SW: O
+  SE: X
