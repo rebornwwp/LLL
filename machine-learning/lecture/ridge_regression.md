@@ -3,25 +3,27 @@
 ------
 
 Motivation: 太多预测因素
+
 > * 数据的输入变量的维度超过数据的观测数
 > * 当多预测因素的时候，没有用上惩罚项的拟合结果将会在一个很大的预测区间中，这样最小二乘回归估计器将不唯一
 
 Motivation: 病态的X
+
 > * 因为最小二乘估计器计算的时候需要计算$(X'X)^{-1}$，当$(X'X)^{-1}$为奇异的，这样计算参数的时候就会有错误
 > * 在常规的线性回归中，$X$中元素很小的变化，都可能导致$(X'X)^{-1}$很大的变化
 > * least squared estimator 在训练数据集学习到的$\beta_{LS}$，可能将估计器放到测试数据集中，效果就不好。
-
 
 ------
 
 ## Ridge Regression
 
 首先我们假设X和Y都已经中心化(centered), 所以我们就不用再回归中加入一个常数项(constant item).
+
 > * X is a n by p matrix with centered columns
 > * Y is a centered n-vector
 
 通过最小二乘法得到的参数为
-$$\hat{\beta} = (X'X)^{-1} X' Y$$,
+$$\hat{\beta} = (X'X)^{-1} X' Y$$, 
 而ridge regression的结果是:
 $$\hat{\beta}_{ridge} = (X'X+\lambda I_p)^{-1} X' Y$$
 其就是下式的最小解

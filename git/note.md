@@ -1,13 +1,13 @@
 # git log
 
-```
+``` 
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # 只用git lg 就能实现功能
 ```
 
 # 跟新代码到最新
 
-```
+``` 
 git pull
 ```
 
@@ -19,7 +19,7 @@ git pull
 
 # 代码比较
 
-```
+``` 
 # 代码在工作区中的比较，修改了但是代码没有加入到暂存区
 git diff
 
@@ -33,21 +33,21 @@ git diff --staged
 
 ## 修改上次commit的内容
 
-```
+``` 
 # 没有文件暂存区与有文件加入暂存区时都是用
 git commit --amend
 ```
 
 ## 取消暂存区的文件
 
-```
+``` 
 # 有一个readme.md的文件加入了暂存区，我们现在撤销暂存
 git reset HEAD readme.md
 ```
 
 ## 撤销对文件的修改
 
-```
+``` 
 # 此时文件并没有加入到暂存区中，只是跟踪状态下文件状态为已修改，现在我们想将代码变成未修改的状态
 git checkout -- <file>
 ```
@@ -56,14 +56,14 @@ git checkout -- <file>
 
 ## 查看远程仓库
 
-```
+``` 
 git remote
 git remote -v
 ```
 
 ## 添加远程仓库
 
-```
+``` 
 git remote add <shortname> <url>
 git remote add pb https://github.com/paulboone/ticgit
 
@@ -73,25 +73,25 @@ git fetch pb
 
 ## 从远程仓库中抓取与拉取
 
-```
+``` 
 git fetch [remote-name]
 ```
 
 ## 推送到远程仓库
 
-```
+``` 
 git push [remote-name] [branch-name]
 ```
 
 ## 查看远程仓库的更多信息
 
-```
+``` 
 git remote show [remote-name]
 ```
 
 ## 远程仓库的移除与重命名
 
-```
+``` 
 git remote rename pb paul
 
 git remote rm paul
@@ -100,7 +100,8 @@ git remote rm paul
 # 打标签
 
 ## 列出标签
-```
+
+``` 
 git tag
 
 # 模式匹配
@@ -117,7 +118,7 @@ Git 使用两种主要类型的标签：轻量标签（lightweight）与附注�
 
 ##  附注标签
 
-```
+``` 
 git tag -a v1.4 -m 'my version  1.4'
 
 # 显示指定标签信息
@@ -126,7 +127,7 @@ git show v1.4
 
 ## git别名
 
-```
+``` 
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
@@ -138,13 +139,13 @@ git config --global alias.unstage 'reset HEAD --'
 
 ## 创建分支
 
-```
+``` 
 git branch [branch-name]
 ```
 
 ## 切换分支
 
-```
+``` 
 git checkout -b [branch-name]
 
 # 下面两个命令可以代替上面的一条命令
@@ -154,7 +155,7 @@ git chekcout [branch-name]
 
 ## 分支合并
 
-```
+``` 
 # 将其他分支合并到master分支
 # master
 git checkout master
@@ -170,7 +171,7 @@ git branch -d had-merged-branch
 
 ## 分支管理
 
-```
+``` 
 # list all branch
 git branch
 
@@ -191,6 +192,7 @@ git branch -d branch-name
 有a和b两个commit（都为git push到远程代码仓库），a在b之前，我们想做的是撤销b，然后将b所做的修改一并commit到a上？
 
 做法
+
 ``` bash
 git reset --soft HEAD^
 

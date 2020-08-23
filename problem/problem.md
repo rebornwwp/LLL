@@ -1,11 +1,12 @@
 # 问题 
-```
+
+``` 
 # 1
 uuid4直接用assertEqual，报错，我的做法是转化成字符串
 faker生成的uuid4是一个字符串
 ```
 
-```
+``` 
 Traceback (most recent call last):
   File "/Users/staff/.virtualenvs/django_env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
     response = get_response(request)
@@ -38,8 +39,3 @@ permission_classes = (permissions.IsAuthenticated)
 正确的应该是
 permission_classes = (permissions.IsAuthenticated, )
 ```
-
-
-
-
-
