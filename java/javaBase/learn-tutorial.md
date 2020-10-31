@@ -88,7 +88,7 @@ class ArrayDemo {
 ```
 
 sumary of variables
-primitive data `byte`, `short`, `int`, `long`, `float`, `double`, `boolean`, `char`, and `java.long.String`
+primitive data `byte` , `short` , `int` , `long` , `float` , `double` , `boolean` , `char` , and `java.long.String`
 
 # operators
 
@@ -124,7 +124,6 @@ i++;
 i--;
 --i;
 
-
 // Equality, relational, and conditional operators
 // the equality and relational
 // ==, !=, >, >=, <, <=
@@ -151,7 +150,6 @@ int i = true ? 1 : 2;
 // instanceof
 // obj instanceof Class
 
-
 // bitwise and bite shift operators
 // <<, >>, >>>
 // bytewise operators ~, &, ^, | 
@@ -168,7 +166,6 @@ Statements are roughly equivalent to sentences in natural languages. A statement
 A block is a group of zero or more statements between balanced braces and can be used anywhere a single statement is allowed. 
 
 # control flow statements
-
 
 ``` java
 // if else
@@ -246,7 +243,6 @@ continue;
 return 0;
 ```
 
-
 # classes
 
 ``` java
@@ -310,7 +306,6 @@ class MyClass extends MySuperClass implements YourInterface {
 }
 //  MyClass is a subclass of MySuperClass and that it implements the YourInterface interface.
 
-
 // overloading methods
 public class DataArtist {
     ...
@@ -373,7 +368,7 @@ public class Rectangle {
 ```
 
 关键字
-`public`, `private` 
+`public` , `private`
 
 Access Levels
 
@@ -466,6 +461,7 @@ public enum Day {
 # annotation
 
 注解(Annotations)是一种元数据，提供了程序之外的一些程序信息。注解并不会直接影响被注解的代码。注解有很多用法： 
+
 1. 为编译器提供信息(Information for the compiler) ——编译器能直接使用注解检查错误(detect errors)和禁止警告(suppress warnings)。 
 2. 编译期和部署时处理(Compile-time and deployment-time processing) —— 软件工具可以使用注解生成代码，XML文件等待。 
 3. 运行期处理(Runtime processing) —— 一些注解可以在运行期被检测。
@@ -889,7 +885,5 @@ try {
 } catch (IOException e) {
     throw new SampleException("Other IOException", e);
 }
-
-
 
 ```

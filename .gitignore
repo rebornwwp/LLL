@@ -107,3 +107,5 @@ ENV/
 
 # mac
 .DS_Store
+
+*.class
