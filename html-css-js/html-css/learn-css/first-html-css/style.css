@@ -1,0 +1,44 @@
+/* style element directly */
+h1 {
+  color: red;
+  list-style-type: none;
+}
+
+p,
+li {
+  list-style-type: none;
+  color: green;
+}
+
+/* both are for styling for specal class attr */
+/* .special {
+    color: orange;
+    font-weight: bold;
+} */
+li.special {
+  color: orange;
+  font-weight: bold;
+}
+
+/* select all em element inside li */
+li em {
+  color: rebeccapurple;
+}
+
+h1 + p {
+  font-size: 200%;
+}
+
+/* style element base on state */
+/* tag:state */
+a:link {
+  color: pink;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  text-decoration: none;
+}
