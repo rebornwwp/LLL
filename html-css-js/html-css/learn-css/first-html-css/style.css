@@ -42,3 +42,12 @@ a:visited {
 a:hover {
   text-decoration: none;
 }
+
+/* * is a wildcard. it means the default style for every element */
+* {
+  color: indigo;
+}
+
+p:first-child {
+  color: lightseagreen;
+}
