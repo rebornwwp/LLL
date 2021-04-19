@@ -51,3 +51,15 @@ a:hover {
 p:first-child {
   color: lightseagreen;
 }
+
+/* function in css */
+.outer {
+  border: 5px solid black;
+}
+
+.box {
+  padding: 10px;
+  width: calc(90% - 30px);
+  background-color: rebeccapurple;
+  color: white;
+}
