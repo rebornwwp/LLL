@@ -25,6 +25,7 @@ multWithLog' =
 writerMain :: IO ()
 writerMain = do
   print "====================== Writer:"
+  print $ runWriter $ writer (10, ["hello world"])
   print $ runWriter $ logNumber 1
   print $ runWriter multWithLog
   print $ runWriter multWithLog'
