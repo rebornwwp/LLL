@@ -14,7 +14,8 @@ multWithLog = do
   a <- logNumber 3
   b <- logNumber 5
   tell ["multiplying " ++ show a ++ " and " ++ show b]
-  return (a * b)
+  c <- writer (10, ["hello"])
+  return (a * b * c)
 
 -- desugar
 multWithLog' :: Writer [String] Int
