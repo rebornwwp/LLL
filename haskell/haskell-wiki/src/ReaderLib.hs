@@ -126,3 +126,27 @@ main1 = do
   putStrLn $ "Modified 's' length: " ++ show modifiedLen
   putStrLn $ "Original 's' length: " ++ show len
   runReaderT printReaderContent "Some Content"
+  print ex1
+  print ex2
+
+-- another example from What I wish
+data MyContext =
+  MyContext
+    { foo :: String
+    , bar :: Int
+    }
+  deriving (Show)
+
+computation :: Reader MyContext (Maybe String)
+computation = do
+  n <- asks bar
+  x <- asks foo
+  if n > 0
+    then return (Just x)
+    else return Nothing
+
+ex1 :: Maybe String
+ex1 = runReader computation $ MyContext "helloXXXX" 1
+
+ex2 :: Maybe String
+ex2 = runReader computation $ MyContext "haskellXXXX" 0

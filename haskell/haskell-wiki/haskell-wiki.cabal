@@ -26,7 +26,9 @@ source-repository head
 library
   exposed-modules:
       Lib
+      PointExample
       ReaderLib
+      TraceExample
   other-modules:
       Paths_haskell_wiki
   hs-source-dirs:
