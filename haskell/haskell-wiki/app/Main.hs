@@ -7,6 +7,7 @@ import           Lib                  ()
 import qualified PointExample         as Point
 import           ReaderLib            (initEmail, main1, view, view')
 import           TraceExample         (trancemain)
+import qualified WriterLib            as W
 
 main :: IO ()
 main
@@ -20,3 +21,4 @@ main
   main1
   trancemain
   Point.main1
+  W.writerMain

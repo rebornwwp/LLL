@@ -29,6 +29,7 @@ library
       PointExample
       ReaderLib
       TraceExample
+      WriterLib
   other-modules:
       Paths_haskell_wiki
   hs-source-dirs:
