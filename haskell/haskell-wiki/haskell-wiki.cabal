@@ -28,6 +28,7 @@ library
       Lib
       PointExample
       ReaderLib
+      StateExample
       TraceExample
       WriterLib
   other-modules:
