@@ -3,6 +3,8 @@
 ## resource
 
 [WHAT I WISH I KNEW WHEN LEARNING HASKELL](https://smunix.github.io/dev.stephendiehl.com/hask/index.html)
+[typeclasses sitemap](https://typeclasses.com/sitemap)
+[Extensions](https://typeclasses.com/ghc/extensions)
 
 ### Monad
 [Monad Laws](http://wiki.haskell.org/Monad_laws)

@@ -26,8 +26,10 @@ source-repository head
 library
   exposed-modules:
       Lib
+      NewTypeExample
       PointExample
       ReaderLib
+      ReaderTLib
       StateExample
       TraceExample
       WriterLib
