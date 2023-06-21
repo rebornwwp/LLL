@@ -25,13 +25,17 @@ source-repository head
 
 library
   exposed-modules:
+      CodeWars
+      GADTExample
       Lib
       NewTypeExample
       PointExample
       ReaderLib
       ReaderTLib
+      SafeHaskell
       StateExample
       TraceExample
+      TypeInferenceExample
       WriterLib
   other-modules:
       Paths_haskell_wiki
@@ -41,6 +45,8 @@ library
   build-depends:
       base >=4.7 && <5
     , mtl
+    , parsec
+    , text
   default-language: Haskell2010
 
 executable haskell-wiki-exe
@@ -54,6 +60,8 @@ executable haskell-wiki-exe
       base >=4.7 && <5
     , haskell-wiki
     , mtl
+    , parsec
+    , text
   default-language: Haskell2010
 
 test-suite haskell-wiki-test
@@ -68,4 +76,6 @@ test-suite haskell-wiki-test
       base >=4.7 && <5
     , haskell-wiki
     , mtl
+    , parsec
+    , text
   default-language: Haskell2010
