@@ -24,6 +24,8 @@ dependencies:
 - mtl
 - text
 - parsec
+- HUnit
+- fmt
 
 ghc-options:
 - -Wall
