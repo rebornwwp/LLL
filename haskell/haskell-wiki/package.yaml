@@ -26,6 +26,7 @@ dependencies:
 - parsec
 - HUnit
 - fmt
+- extra
 
 ghc-options:
 - -Wall

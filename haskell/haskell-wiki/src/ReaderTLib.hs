@@ -2,10 +2,10 @@ module ReaderTLib
   ( main1
   ) where
 
-import           Control.Monad.Reader (MonadReader (ask, local),
+import           Control.Monad.Reader (MonadReader (ask, local, reader),
                                        MonadTrans (lift), Reader,
-                                       ReaderT (ReaderT, runReaderT), asks,
-                                       mapReaderT, withReaderT)
+                                       ReaderT (runReaderT), asks, mapReaderT,
+                                       withReaderT)
 
 {-
 use case:
@@ -78,6 +78,16 @@ change data
 -}
 ex2 :: EvalM Int
 ex2 = local changeEnv (eval (Add (Val 2) (Add (Val 1) (Var "z"))))
+
+ex3 :: EvalM Int
+ex3 = do
+  x <- ask
+  return $ length x
+
+ex3' :: EvalM Int
+ex3' = reader length
+  -- x <- ask
+  -- return $ length x
 
 {- change function -}
 changeEnv :: Env -> Env

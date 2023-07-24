@@ -3,6 +3,7 @@ module Main
   ) where
 
 import qualified CodeWars             as CW
+import qualified CodeWars1            as CW1
 import           Control.Monad.Reader (runReader)
 import           Lib                  ()
 import qualified NewTypeExample       as NT
@@ -32,3 +33,4 @@ main
   NT.main1
   SH.main1
   CW.main
+  CW1.funcx

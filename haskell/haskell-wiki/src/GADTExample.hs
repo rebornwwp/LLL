@@ -6,6 +6,17 @@ module GADTExample where
 
 import           Data.Kind (Type)
 
+{- | https://www.stevenleiva.com/posts/gadts
+
+GADTs give us a new tool by which to communicate
+from the term layer to the type layer. The data
+constructors at the term layer can be used to
+determine the type (at the type layer).
+
+The ability of GADTs to convey information from
+the term layer - via the data constructors -
+to the type layer is how they change the game!
+-}
 -- vanilla haskell
 data List a
   = Empty
@@ -33,6 +44,7 @@ eval (If b e1 e2) =
 example :: Int
 example = eval (Succ (Succ (Lit 3)))
 
+
 -- using Constraints
 data Exp a
   = (a ~ Int) =>
@@ -52,6 +64,7 @@ evalExp e =
         then evalExp tr
         else evalExp fl
 
+
 -- data T a where
 --   T1 :: Int -> T Int
 --   T2 :: T a
@@ -65,3 +78,20 @@ f :: T a -> [Int]
 f (T1 n) = [n]
 f T2     = []
 f (T3 _) = []
+
+
+-- data MyType a where
+--   MyTypeNullaryDataConstructor :: MyType Int
+--   MyTypeNullaryDataConstructor :: Bool -> MyType Bool
+--   MyTypeUnaryDataConstructor :: a -> MyType a
+data NoGADT a =
+  NoGADT Int
+
+a :: NoGADT Bool
+b = NoGADT 5
+
+b :: NoGADT Int
+b = NoGADT 5
+
+c :: NoGADT String
+b = NoGADT 5
