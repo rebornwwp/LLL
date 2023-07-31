@@ -84,14 +84,14 @@ f (T3 _) = []
 --   MyTypeNullaryDataConstructor :: MyType Int
 --   MyTypeNullaryDataConstructor :: Bool -> MyType Bool
 --   MyTypeUnaryDataConstructor :: a -> MyType a
-data NoGADT a =
-  NoGADT Int
+-- data NoGADT a =
+--   NoGADT Int
 
-a :: NoGADT Bool
-b = NoGADT 5
+-- a :: NoGADT Bool
+-- b = NoGADT 5
 
-b :: NoGADT Int
-b = NoGADT 5
+-- b :: NoGADT Int
+-- b = NoGADT 5
 
-c :: NoGADT String
-b = NoGADT 5
+-- c :: NoGADT String
+-- b = NoGADT 5

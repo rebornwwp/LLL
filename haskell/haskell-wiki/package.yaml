@@ -27,6 +27,7 @@ dependencies:
 - HUnit
 - fmt
 - extra
+- containers
 
 ghc-options:
 - -Wall
@@ -38,6 +39,7 @@ ghc-options:
 - -Wmissing-home-modules
 - -Wpartial-fields
 - -Wredundant-constraints
+- -Wunticked-promoted-constructors
 
 library:
   source-dirs: src

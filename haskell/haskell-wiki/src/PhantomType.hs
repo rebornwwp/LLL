@@ -1,3 +1,6 @@
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE MultiParamTypeClasses      #-}
+
 module PhantomType where
 
 {- | https://www.stevenleiva.com/posts/phantom_types

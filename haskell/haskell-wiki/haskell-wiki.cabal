@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.35.1.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 
@@ -27,34 +27,50 @@ library
   exposed-modules:
       CodeWars
       CodeWars1
-      ParsecParserExpr
-      TestA
-      SQLParser
       EnumEq
       EnumEqMain
-      ReadShow
+      ExprMonad
+      ExprNormal
+      Extensions.Kinds
       GADTExample
+      HelloWorld.ALaCarte
+      HelloWorld.CD1
+      IORefLib
       Lib
+      Memoization
       NewTypeExample
+      ParsecParserExpr
+      PhantomType
       PointExample
       ReaderLib
       ReaderTLib
+      ReaderWriterStateLib
+      ReadShow
       SafeHaskell
+      SQLParser
       StateExample
+      TestA
       TraceExample
       TypeInferenceExample
+      TypeLevelProgramming.Basic
+      TypeLevelProgramming.Origin1
+      TypeLevelProgramming.Origin2
+      TypeLevelProgramming.Origin3
       WriterLib
   other-modules:
       Paths_haskell_wiki
   hs-source-dirs:
       src
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors
   build-depends:
-      base >=4.7 && <5
+      HUnit
+    , base >=4.7 && <5
+    , containers
+    , extra
+    , fmt
     , mtl
     , parsec
     , text
-    , fmt
   default-language: Haskell2010
 
 executable haskell-wiki-exe
@@ -63,15 +79,17 @@ executable haskell-wiki-exe
       Paths_haskell_wiki
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      HUnit
+    , base >=4.7 && <5
+    , containers
+    , extra
+    , fmt
     , haskell-wiki
     , mtl
     , parsec
     , text
-    , HUnit
-    , fmt
   default-language: Haskell2010
 
 test-suite haskell-wiki-test
@@ -81,13 +99,15 @@ test-suite haskell-wiki-test
       Paths_haskell_wiki
   hs-source-dirs:
       test
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      HUnit
+    , base >=4.7 && <5
+    , containers
+    , extra
+    , fmt
     , haskell-wiki
     , mtl
     , parsec
     , text
-    , HUnit
-    , fmt
   default-language: Haskell2010
