@@ -9,6 +9,8 @@ module TypeLevelProgramming.Basic where
 
 
 -- https://www.parsonsmatt.org/2017/04/26/basic_type_level_programming_in_haskell.html
+-- https://serokell.io/blog/datakinds-are-not-what-you-think
+-- 2016年版本之后的修改
 data HigherKinded f a
   = Bare a
   | Wrapped (f a)
@@ -102,11 +104,12 @@ append (VCons a rest) xs = VCons a (append rest xs)
 -- Heterogeneous Lists
 data HList xs where
   HNil :: HList '[]
-  (:::) :: a -> HList as -> HList (a ': as)
+  HCons :: a -> HList as -> HList (a ': as)
 
-infixl 6 :::
 
-instance Show (HList xs) where
-    show HNil         = "HNil"
-    show (x ::: rest) = "_ ::: " ++ show rest
-
+-- instance Show (HList xs)
+--  where
+--   show HNil           = "HNil"
+--   show (HCons x rest) = "_ ::: " ++ show rest
+newtype s >> a =
+  Named a
