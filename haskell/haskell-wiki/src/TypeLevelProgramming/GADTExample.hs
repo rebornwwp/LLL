@@ -2,7 +2,7 @@
 {-# LANGUAGE GADTs                     #-}
 {-# LANGUAGE KindSignatures            #-}
 
-module GADTExample where
+module TypeLevelProgramming.GADTExample where
 
 import           Data.Kind (Type)
 

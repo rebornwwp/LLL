@@ -1,7 +1,7 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE MultiParamTypeClasses      #-}
 
-module PhantomType where
+module TypeLevelProgramming.PhantomType where
 
 {- | https://www.stevenleiva.com/posts/phantom_types
 -}
@@ -9,6 +9,8 @@ data Mile
 
 data Kilometer
 
+
+-- a is phantom parameters
 newtype Distance a =
   Distance
     { unDistance :: Double
