@@ -56,6 +56,7 @@ library
       TypeLevelProgramming.Origin2
       TypeLevelProgramming.Origin3
       TypeLevelProgramming.PhantomType
+      TypeLevelProgramming.TypeOperators
       WriterLib
   other-modules:
       Paths_haskell_wiki

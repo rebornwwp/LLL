@@ -35,47 +35,38 @@ polybarColorScheme =
     , visibleWorkspaceBackground = RGB 0x2a 0x20 0x35
     }
 
-
 -- newtype ThemeInstance =
 --   ThemeInstance
 --     { getThemeInstance :: Map.Map String RGB
 --     }
-
 -- myTheme =
 --   ThemeInstance . Map.fromList $
 --   [("foreground", RGB 0x3a 0x20 0x35), ("background", RGB 0xdd 0xa0 0xdd)]
-
 -- polybarColorScheme' :: ThemeInstance -> Maybe PolybarColorScheme
 -- polybarColorScheme' (ThemeInstance theme) =
 --   PolybarColorScheme <$> Map.lookup "foreground" theme <*>
 --   Map.lookup "background" theme <*>
 --   Map.lookup "foreground" theme <*>
 --   Map.lookup "background" theme
-
 -- 上面已经支持了RGB的颜色，但也有时候需要其他数据类型来表示的RGB, 所以引入IsColor 的typeclass
 class IsColor a where
   toRGB :: a -> RGB
 
-instance IsColor RGB
- where
+instance IsColor RGB where
   toRGB = id
-
 
 -- 通过名字来表示颜色
 data AliceBlue =
   AliceBlue
 
-instance IsColor AliceBlue
- where
+instance IsColor AliceBlue where
   toRGB = const $ RGB 0xF0 0xF8 0xFF
-
 
 -- 函数可以传入 RGB与 AliceBlue两种类型, 具有IsColor的类型
 toHex :: IsColor a => a -> String
 toHex a =
   let (RGB r g b) = toRGB a
    in printf "%02x%02x%02x" r g b
-
 
 -- 此方式不具有IsColor的特性
 -- newtype ThemeInstance' colorType =
@@ -90,20 +81,16 @@ toHex a =
 --     { getThemeInstance' :: IsColor colorType =>
 --                              Map.Map String colorType
 --     }
-
 -- An Existential Type is a type that we can create to hold values of several different types that all implement a particular typeclass.
 data SomeColor =
   forall color. IsColor color =>
                 SomeColor color
 
-instance Show SomeColor
- where
+instance Show SomeColor where
   show = show . toRGB
 
-instance IsColor SomeColor
- where
+instance IsColor SomeColor where
   toRGB (SomeColor color) = toRGB color
-
 
 -- add Phantom Type
 -- we have a ThemeInstance value and have defined the Theme kind,
@@ -124,5 +111,4 @@ t =
 
 someRGB :: Word8 -> Word8 -> Word8 -> SomeColor
 someRGB r g b = SomeColor $ RGB r g b
-
 -- t' = ThemeInstance  $ Map.singleton "red" (someRGB 255 0 0)

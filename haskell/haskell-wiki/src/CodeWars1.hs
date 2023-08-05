@@ -2,14 +2,30 @@ module CodeWars1
   ( funcx
   ) where
 
-import           Control.Monad      (void)
-import           Data.Char          (isDigit, isLetter)
-import           Data.Functor       (($>), (<$))
-import           Text.Parsec        (ParseError, anyToken, between, chainl1,
-                                     char, choice, digit, eof, letter, many,
-                                     many1, manyTill, oneOf, parse, satisfy,
-                                     spaces, string, (<|>))
-import           Text.Parsec.String (Parser)
+import Control.Monad (void)
+import Data.Char (isDigit, isLetter)
+import Data.Functor (($>), (<$))
+import Text.Parsec
+  ( ParseError
+  , (<|>)
+  , anyToken
+  , between
+  , chainl1
+  , char
+  , choice
+  , digit
+  , eof
+  , letter
+  , many
+  , many1
+  , manyTill
+  , oneOf
+  , parse
+  , satisfy
+  , spaces
+  , string
+  )
+import Text.Parsec.String (Parser)
 
 funcx :: IO ()
 funcx = print "hello"
@@ -248,4 +264,5 @@ parseWithLeftOver p = parse ((,) <$> p <*> leftOver) ""
 
 parseWithWSEof :: Parser a -> String -> Either ParseError a
 parseWithWSEof p = parseWithEof (whiteSpace *> p)
-  where whiteSpace = void $ many $ oneOf " \n\t"
+  where
+    whiteSpace = void $ many $ oneOf " \n\t"

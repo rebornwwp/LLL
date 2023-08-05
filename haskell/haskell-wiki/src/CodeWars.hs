@@ -2,13 +2,28 @@ module CodeWars
   ( main
   ) where
 
-import           Control.Monad      (void)
-import           Data.Char          (isDigit, isLetter)
-import           Text.Parsec        (ParseError, anyChar, anyToken, char,
-                                     choice, digit, eof, many, many1, manyTill,
-                                     parse, satisfy, spaces, string, try, upper,
-                                     (<|>))
-import           Text.Parsec.String (Parser)
+import Control.Monad (void)
+import Data.Char (isDigit, isLetter)
+import Text.Parsec
+  ( ParseError
+  , (<|>)
+  , anyChar
+  , anyToken
+  , char
+  , choice
+  , digit
+  , eof
+  , many
+  , many1
+  , manyTill
+  , parse
+  , satisfy
+  , spaces
+  , string
+  , try
+  , upper
+  )
+import Text.Parsec.String (Parser)
 
 data Expr
   = Add Expr Expr
@@ -40,7 +55,7 @@ y = regularParse (many1 digit) "122"
 main :: IO ()
 main = do
   case xs of
-    Left x  -> print $ "left" ++ show x
+    Left x -> print $ "left" ++ show x
     Right x -> print $ "right" ++ show x
 
 xs :: Either ParseError Char

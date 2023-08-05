@@ -44,7 +44,6 @@ eval (If b e1 e2) =
 example :: Int
 example = eval (Succ (Succ (Lit 3)))
 
-
 -- using Constraints
 data Exp a
   = (a ~ Int) =>
@@ -64,7 +63,6 @@ evalExp e =
         then evalExp tr
         else evalExp fl
 
-
 -- data T a where
 --   T1 :: Int -> T Int
 --   T2 :: T a
@@ -78,20 +76,15 @@ f :: T a -> [Int]
 f (T1 n) = [n]
 f T2     = []
 f (T3 _) = []
-
-
 -- data MyType a where
 --   MyTypeNullaryDataConstructor :: MyType Int
 --   MyTypeNullaryDataConstructor :: Bool -> MyType Bool
 --   MyTypeUnaryDataConstructor :: a -> MyType a
 -- data NoGADT a =
 --   NoGADT Int
-
 -- a :: NoGADT Bool
 -- b = NoGADT 5
-
 -- b :: NoGADT Int
 -- b = NoGADT 5
-
 -- c :: NoGADT String
 -- b = NoGADT 5
