@@ -4,6 +4,7 @@
 module TypeLevelProgramming.TypeOperators where
 
 
+-- 对类型做操作，创建新的类型
 -- The element of the sum is a value of either left or right type.
 data a + b
   = Inl a
@@ -34,7 +35,17 @@ val1 = Inl 0
 val2 :: Int + Bool * Bool
 val2 = Inr (True :*: False)
 
+
+-- type synonyms
+-- The value of the Point type may be used to store a point
+-- in one-dimensional, twodimensional, or three-dimensional space.
 type Point a = a + a * a + a * a * a
 
 zero2D :: Point Int
 zero2D = Inl (Inr (0 :*: 0))
+
+testmain :: IO ()
+testmain = do
+  print val1
+  print val2
+  print zero2D
