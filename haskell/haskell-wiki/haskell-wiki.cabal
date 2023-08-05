@@ -51,6 +51,7 @@ library
       TraceExample
       TypeInferenceExample
       TypeLevelProgramming.Basic
+      TypeLevelProgramming.DataKinds.TempKinds
       TypeLevelProgramming.GADTExample
       TypeLevelProgramming.Origin1
       TypeLevelProgramming.Origin2
