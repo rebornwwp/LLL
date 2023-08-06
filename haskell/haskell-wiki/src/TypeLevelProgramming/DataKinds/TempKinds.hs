@@ -38,6 +38,37 @@ f2c (Temp f) = Temp ((f - 32) * 5 / 9)
 class UnitName (u :: TempUnits) where
   unitName :: String
 
+instance UnitName F where
+  unitName :: String
+  unitName = "F"
+
+instance UnitName C where
+  unitName :: String
+  unitName = "C"
+
+instance UnitName u => Show (Temp u) where
+  show :: Temp u -> String
+  show (Temp t) = show t ++ "XXX" ++ unitName @u
+
+unit ::
+     forall u. UnitName u
+  => Temp u
+  -> String
+unit _ = unitName @u
+
+printTemp ::
+     forall u. UnitName u
+  => Temp u
+  -> IO ()
+printTemp t = do
+  putStrLn $ "Temperature: " ++ show t
+  putStrLn $ "Units: " ++ unit t
+
+testmain1 :: IO ()
+testmain1 = do
+  printTemp paperBurning
+  printTemp absoluteZero
+
 
 -- type level literals
 -- Nat for natural numbers, such as 0, 1, 2,…—These literals become types under promotion.

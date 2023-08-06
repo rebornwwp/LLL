@@ -1,0 +1,1 @@
+module TypeLevelProgramming.TypeFamily.OpenAndCloseTypeSynonymFamilies where
