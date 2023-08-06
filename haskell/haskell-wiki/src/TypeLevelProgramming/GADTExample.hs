@@ -8,6 +8,8 @@ import           Control.Exception (Exception)
 import           Data.Kind         (Type)
 
 
+-- GADTs allow keeping and using information about types after constructing a value.
+-- 动态类型 dynamical types
 -- what is generalized?
 data Dyn
   = SA String
@@ -19,10 +21,6 @@ data DynValue a where
   C :: Char -> DynValue Char
   B :: Bool -> DynValue Bool
 
-getValue :: Dyn -> a
-getValue (B b) = b
-getValue (C c) = c
-getValue (S s) = s
 
 -- 如果不使用GADT，下面的函数将会很难构建
 getValue :: DynValue a -> a
