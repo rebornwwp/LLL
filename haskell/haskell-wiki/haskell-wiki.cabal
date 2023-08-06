@@ -57,8 +57,9 @@ library
       TypeLevelProgramming.Origin2
       TypeLevelProgramming.Origin3
       TypeLevelProgramming.PhantomType
+      TypeLevelProgramming.TypeFamily.AssociatedFamilies
+      TypeLevelProgramming.TypeFamily.DataFamilies
       TypeLevelProgramming.TypeFamily.OpenAndCloseTypeSynonymFamilies
-      TypeLevelProgramming.TypeFamily.SimplifyWiden
       TypeLevelProgramming.TypeOperators
       WriterLib
   other-modules:

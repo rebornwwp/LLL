@@ -1,7 +1,10 @@
 {-# LANGUAGE AllowAmbiguousTypes        #-}
 {-# LANGUAGE DataKinds                  #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE InstanceSigs               #-}
 {-# LANGUAGE KindSignatures             #-}
+{-# LANGUAGE ScopedTypeVariables        #-}
+{-# LANGUAGE TypeApplications           #-}
 
 module TypeLevelProgramming.DataKinds.TempKinds where
 
@@ -73,14 +76,21 @@ testmain1 = do
 -- type level literals
 -- Nat for natural numbers, such as 0, 1, 2,…—These literals become types under promotion.
 -- Symbol for strings, such as "hello" and "bye"—These literals become types, too
--- :set -XDataKinds -XNoStarIsType
--- :kind 42
--- :kind Nat
--- :kind "hello"
--- :kind Symbol
--- :kind []
--- :kind [Int, String, Bool]
--- :kind '[Int, String, Bool]
+-- >>> :set -XDataKinds -XNoStarIsType
+-- >>> :kind 42
+-- >>> :kind Nat
+-- >>> :kind "hello"
+-- >>> :kind Symbol
+-- >>> :kind []
+-- >>> :kind [Int, String, Bool]
+-- >>> :kind '[Int, String, Bool]
+-- 42 :: Natural
+-- Nat :: Type
+-- "hello" :: Symbol
+-- Symbol :: Type
+-- [] :: Type -> Type
+-- [Int, String, Bool] :: [Type]
+-- '[Int, String, Bool] :: [Type]
 --
 -- For example, the Pointer 2 value of the Pointer 4 type corresponds to the pointer value 8.
 newtype Pointer (align :: Nat) =

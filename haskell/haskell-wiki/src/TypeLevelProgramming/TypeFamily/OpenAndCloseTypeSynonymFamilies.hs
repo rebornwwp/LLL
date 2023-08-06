@@ -37,9 +37,9 @@ type instance Simplify Char = String
 type instance Simplify Bool = String
 
 
--- :kind Simplify
--- :kind Simplify Bool
--- :kind! Simplify Bool
+-- >>> :kind Simplify
+-- >>> :kind Simplify Bool
+-- >>> :kind! Simplify Bool
 
 -- term-level 来处理数据转换
 class Simplifier t where
