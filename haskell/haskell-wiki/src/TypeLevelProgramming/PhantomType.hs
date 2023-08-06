@@ -130,20 +130,20 @@ addKilometersToMiles distanceInKilometers distanceInMiles =
 class Add a b where
   addDistance :: Distance a -> Distance b -> Distance b
 
-instance Add Mile Kilometer
- where
+instance Add Mile Kilometer where
+  addDistance :: Distance Mile -> Distance Kilometer -> Distance Kilometer
   addDistance = addMilesToKilometers
 
-instance Add Kilometer Mile
- where
+instance Add Kilometer Mile where
+  addDistance :: Distance Kilometer -> Distance Mile -> Distance Mile
   addDistance = addKilometersToMiles
 
-instance Add Mile Mile
-
- where
+instance Add Mile Mile where
+  addDistance :: Distance Mile -> Distance Mile -> Distance Mile
   addDistance = (+)
 
 instance Add Kilometer Kilometer where
+  addDistance :: Distance Kilometer -> Distance Kilometer -> Distance Kilometer
   addDistance = (+)
 
 tenMiles = Distance 10 :: Distance Mile
