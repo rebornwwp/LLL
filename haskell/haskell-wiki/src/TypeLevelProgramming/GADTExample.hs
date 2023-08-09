@@ -78,6 +78,47 @@ printWDValue (Wrap dv) = printValue dv
 -- We can use *existential typing techniques* to build GADTs from other types and pass those wrapped types around until we need the power of original types.
 -----------------------------------------------------------------
 
+-- GADTs add type control to arithmetic expressions.
+
+-- 下面两种方式是相同的意思, 但是如果要使得GADT具有特定类型的constructor的时候，需要使用 GADTs extensions
+-- data Expr a = Lit a | Add (Expr a) (Expr a) | Mult (Expr a) (Expr a)
+
+-- {-# LANGUAGE GADTSyntax #-}
+-- data Expr a where
+--   Lit :: a -> Expr a
+--   Add :: Expr a -> Expr a -> Expr a
+--   Mult :: Expr a -> Expr a -> Expr a
+data Expr a where
+  NumLit :: Num a => a -> Expr a
+  BoolLit :: Bool -> Expr Bool
+  Add :: Num a => Expr a -> Expr a -> Expr a
+  Mult :: Num a => Expr a -> Expr a -> Expr a
+  IsZeroA :: (Num a, Eq a) => Expr a -> Expr Bool
+  IfA :: Expr Bool -> Expr a -> Expr a -> Expr a
+
+myeval :: Expr a -> a
+myeval (NumLit e) = e
+myeval (BoolLit b) = b
+myeval (Add e1 e2) = myeval e1 + myeval e2
+myeval (Mult e1 e2) = myeval e1 * myeval e2
+myeval (IsZeroA e) = myeval e == 0
+myeval (IfA be e1 e2) =
+  myeval
+    (if myeval be
+       then e1
+       else e2)
+
+
+-- >>> expr1 = Add (NumLit 5) (NumLit (-5))
+
+-- >>> expr2 = if (IsZeroA expr1) (NumLit 0.5) (NumLit 1)
+
+-- an existential wrapper
+data SomeExpr where
+  Some :: Expr a -> SomeExpr
+
+-----------------------------------------------------------------
+
 --  https://www.stevenleiva.com/posts/gadts
 -- GADTs give us a new tool by which to communicate
 -- from the term layer to the type layer. The data

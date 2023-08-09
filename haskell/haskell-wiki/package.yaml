@@ -28,6 +28,7 @@ dependencies:
 - fmt
 - extra
 - containers
+- aeson
 
 ghc-options:
 - -Wall

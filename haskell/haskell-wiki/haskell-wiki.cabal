@@ -37,6 +37,9 @@ library
       IORefLib
       Lib
       Memoization
+      MetaProgramming.Corece
+      MetaProgramming.DerivingInstance
+      MetaProgramming.Via
       NewTypeExample
       ParsecParserExpr
       PointExample
@@ -57,6 +60,7 @@ library
       TypeLevelProgramming.Origin2
       TypeLevelProgramming.Origin3
       TypeLevelProgramming.PhantomType
+      TypeLevelProgramming.RankNTypes
       TypeLevelProgramming.TypeFamily.AssociatedFamilies
       TypeLevelProgramming.TypeFamily.DataFamilies
       TypeLevelProgramming.TypeFamily.OpenAndCloseTypeSynonymFamilies
@@ -69,6 +73,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors
   build-depends:
       HUnit
+    , aeson
     , base >=4.7 && <5
     , containers
     , extra
@@ -87,6 +92,7 @@ executable haskell-wiki-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       HUnit
+    , aeson
     , base >=4.7 && <5
     , containers
     , extra
@@ -107,6 +113,7 @@ test-suite haskell-wiki-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       HUnit
+    , aeson
     , base >=4.7 && <5
     , containers
     , extra
