@@ -1,6 +1,6 @@
-name:                haskell-wiki
+name:                stockquotes
 version:             0.1.0.0
-github:              "githubuser/haskell-wiki"
+github:              "githubuser/stockquotes"
 license:             BSD3
 author:              "Author name here"
 maintainer:          "example@example.com"
@@ -17,19 +17,24 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/haskell-wiki#readme>
+description:         Please see the README on GitHub at <https://github.com/githubuser/stockquotes#readme>
 
 dependencies:
 - base >= 4.7 && < 5
-- mtl
+- time
+- cassava
+- bytestring
+- optparse-applicative
 - text
-- parsec
-- HUnit
+- Chart
+- Chart-diagrams
+- colonnade
+- blaze-colonnade
+- blaze-html
 - fmt
-- extra
 - containers
-- aeson
-- template-haskell
+- lens
+- mtl
 
 ghc-options:
 - -Wall
@@ -41,13 +46,12 @@ ghc-options:
 - -Wmissing-home-modules
 - -Wpartial-fields
 - -Wredundant-constraints
-- -Wunticked-promoted-constructors
 
 library:
   source-dirs: src
 
 executables:
-  haskell-wiki-exe:
+  stockquotes-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -55,10 +59,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - haskell-wiki
+    - stockquotes
 
 tests:
-  haskell-wiki-test:
+  stockquotes-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -66,4 +70,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - haskell-wiki
+    - stockquotes

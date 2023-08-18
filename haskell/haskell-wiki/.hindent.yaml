@@ -5,3 +5,5 @@ extensions:
   - TypeApplications
   - PatternSynonyms
   - TypeOperators
+  - DerivingStrategies
+  - DerivingVia
