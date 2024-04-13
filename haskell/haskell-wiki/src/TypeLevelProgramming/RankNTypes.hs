@@ -69,9 +69,9 @@ mask f = undefined
 
 
 -- rank-2 polymorphism with phantom types
-mymap :: forall a b. (a -> b) -> [a] -> [b]
-mymap _ []     = []
-mymap f (x:xs) = (f x :: b) : mymap f xs
+-- mymap :: forall a b. (a -> b) -> [a] -> [b]
+-- mymap _ []     = []
+-- mymap f (x:xs) = (f x :: b) : mymap f xs
 
 -- It is crucial to understand the main Haskell components of type-level programming: terms, types, and kinds.
 -- Data constructors can be promoted to types and type constructors to kinds by the DataKinds GHC extension.

@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveGeneric #-}
+
 module HelloWorld.A where
 
 import           Debug.Trace

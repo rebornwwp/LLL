@@ -1,12 +1,13 @@
 {-# LANGUAGE DefaultSignatures #-}
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE FlexibleContexts  #-}
+{-# LANGUAGE InstanceSigs      #-}
 {-# LANGUAGE TypeOperators     #-}
 
 module HelloWorld.CD1 where
 
-import Data.Bits
-import GHC.Generics
+import           Data.Bits
+import           GHC.Generics
 
 data Bit
   = O
@@ -29,51 +30,41 @@ class GSerialize f where
   gput :: f a -> [Bit]
   gget :: [Bit] -> (f a, [Bit])
 
-
 -- | Unit: used for constructors without arguments
-instance GSerialize U1
- where
+instance GSerialize U1 where
   gput U1 = []
   gget xs = (U1, xs)
 
-
 -- | Products: encode multiple arguments to constructors
-instance (GSerialize a, GSerialize b) => GSerialize (a :*: b)
- where
+instance (GSerialize a, GSerialize b) => GSerialize (a :*: b) where
   gput (a :*: b) = gput a ++ gput b
-  gget xs        = (a :*: b, xs'')
+  gget xs = (a :*: b, xs'')
     where
-      (a, xs')  = gget xs
+      (a, xs') = gget xs
       (b, xs'') = gget xs'
 
-
 -- | Sums: encode choice between constructors
-instance (GSerialize a, GSerialize b) => GSerialize (a :+: b)
- where
+instance (GSerialize a, GSerialize b) => GSerialize (a :+: b) where
   gput (L1 x) = O : gput x
   gput (R1 x) = I : gput x
   gget (O:xs) = (L1 x, xs')
     where
       (x, xs') = gget xs
-  gget (I:xs)  = (R1 x, xs')
+  gget (I:xs) = (R1 x, xs')
     where
       (x, xs') = gget xs
-
 
 -- | Meta-information (constructor names, etc.)
-instance (GSerialize a) => GSerialize (M1 i c a)
- where
+instance (GSerialize a) => GSerialize (M1 i c a) where
   gput (M1 x) = gput x
-  gget xs     = (M1 x, xs')
+  gget xs = (M1 x, xs')
     where
       (x, xs') = gget xs
 
-
 -- | Constants, additional parameters and recursion of kind *
-instance (Serialize a) => GSerialize (K1 i a)
- where
+instance (Serialize a) => GSerialize (K1 i a) where
   gput (K1 x) = put x
-  gget xs     = (K1 x, xs')
+  gget xs = (K1 x, xs')
     where
       (x, xs') = get xs
 

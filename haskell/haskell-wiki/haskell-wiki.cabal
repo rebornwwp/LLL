@@ -58,7 +58,6 @@ library
       SafeHaskell
       SQLParser
       StateExample
-      TAPL.Syntax
       TestA
       TraceExample
       TypeInferenceExample

@@ -15,7 +15,6 @@ import qualified Data.Text.IO         as TIO
 logNumber :: Int -> Writer [String] Int
 logNumber num = writer (num, ["Got number: " <> show num])
 
-
 --do-sugar
 {- | tell to write data to writer
 -}
@@ -26,7 +25,6 @@ multWithLog = do
   tell ["multiplying " ++ show a ++ " and " ++ show b]
   c <- writer (10, ["hello"])
   return (a * b * c)
-
 
 -- desugar 不推荐使用
 multWithLog' :: Writer [String] Int
@@ -44,7 +42,6 @@ deleteOn p m =
     if p w
       then return (a, id)
       else return (a, const mempty)
-
 
 -- Or pass alone
 deleteOn' :: (Monoid w) => (w -> Bool) -> Writer w a -> Writer w a
