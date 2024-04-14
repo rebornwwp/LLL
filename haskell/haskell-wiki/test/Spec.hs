@@ -1,8 +1,12 @@
 module Main where
 
+import           HUnitSpec          (test1)
+import           QuickcheckSpec     (prop_mirror_toList)
 import           SQLParser          (ValueExpr (BinOp, Iden, NumLit, Parens, PrefOp),
                                      valueExpr0)
 import qualified Test.HUnit         as H
+import           Test.QuickCheck    (Args (maxSize), quickCheck, quickCheckWith,
+                                     stdArgs)
 import           Text.Parsec        (eof, parse, spaces)
 import           Text.Parsec.String (Parser)
 
@@ -54,3 +58,6 @@ main = do
   putStrLn "Test suite not yet implemented"
   x <- H.runTestTT $ H.TestList $ map (makeTest valueExpr0) basicTests
   print x
+  H.runTestTT test1 >>= print
+  quickCheckWith (stdArgs {maxSize = 10}) prop_mirror_toList
+  quickCheck prop_mirror_toList

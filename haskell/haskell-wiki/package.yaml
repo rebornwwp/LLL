@@ -30,6 +30,7 @@ dependencies:
 - containers
 - aeson
 - template-haskell
+- QuickCheck
 
 ghc-options:
 - -Wall
