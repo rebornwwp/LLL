@@ -49,7 +49,7 @@ model = DynamicNet(D_in, H, D_out)
 
 # Construct our loss function and an Optimizer. Training this strange model with
 # vanilla stochastic gradient descent is tough, so we use momentum
-criterion = torch.nn.MSELoss(size_average=False)
+criterion = torch.nn.MSELoss(reduction="mean")
 optimizer = torch.optim.SGD(model.parameters(), lr=1e-4, momentum=0.9)
 for t in range(500):
     # Forward pass: Compute predicted y by passing x to the model
@@ -57,7 +57,7 @@ for t in range(500):
 
     # Compute and print loss
     loss = criterion(y_pred, y)
-    print(t, loss.data[0])
+    print(t, loss.data.item())
 
     # Zero gradients, perform a backward pass, and update the weights.
     optimizer.zero_grad()

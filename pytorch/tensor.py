@@ -15,7 +15,7 @@ for t in range(500):
     relu_h = np.maximum(h, 0)
     pred_y = relu_h.dot(w2)
 
-    loss = np.square(y-pred_y).sum()
+    loss = np.square(y - pred_y).sum()
     print("the loss is : {}".format(loss))
 
     grad_pred_y = 2.0 * (pred_y - y)
@@ -33,5 +33,5 @@ h = x.dot(w1)
 relu_h = np.maximum(h, 0)
 pred_y = relu_h.dot(w2)
 
-loss = np.square(y-pred_y).sum()
+loss = np.square(y - pred_y).sum()
 print("the last loss is : {}".format(loss))
