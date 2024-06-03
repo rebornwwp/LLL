@@ -9,11 +9,13 @@ import           Control.Exception (Exception)
 -- GADTs allow keeping and using information about types after constructing a value.
 -- 动态类型 dynamical types
 -- what is generalized?
+-- not GADT
 data Dyn
   = SA String
   | CA Char
   | BA Bool
 
+-- GADT
 data DynValue a where
   S :: String -> DynValue String
   C :: Char -> DynValue Char
@@ -114,6 +116,32 @@ data SomeExpr where
 -- to the type layer is how they change the game!
 -- vanilla haskell
 -- a closed data family,
+-- Not GADTs: 这里如果被初始化之后，在同一个编程上下文中，会初始化为同一类型
+-- the return type depends on the type variable has been initialized
+data AType a
+  = ATypeNullaryDataConstructor
+  | ATypeUnaryDataConstructor a
+
+-- GADTs
+-- the return type of the data constructor depends on the data constructor itself
+-- 通过data constructor 的传入来确定类型
+data MyType a where
+  MyTypeNullaryDataConstructor :: MyType Int
+  MyTypeUnaryDataConstructor :: a -> MyType a
+
+--  a,b,c 有相同的值，但是有不同的数据类型
+data NoGADT a =
+  NoGADT Int
+
+a :: NoGADT Bool
+a = NoGADT 5
+
+b :: NoGADT Int
+b = NoGADT 5
+
+c :: NoGADT String
+c = NoGADT 5
+
 data List a
   = Empty
   | Cons a (List a)
