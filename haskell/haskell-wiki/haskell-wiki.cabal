@@ -36,6 +36,7 @@ library
       HelloWorld.A
       HelloWorld.ALaCarte
       HelloWorld.CD1
+      HTTPDemo.Demo
       IORefLib
       Lib
       Memoization
@@ -88,6 +89,7 @@ library
     , extra
     , fmt
     , mtl
+    , optparse-applicative
     , parsec
     , template-haskell
     , text
@@ -110,6 +112,30 @@ executable haskell-wiki-exe
     , fmt
     , haskell-wiki
     , mtl
+    , optparse-applicative
+    , parsec
+    , template-haskell
+    , text
+  default-language: Haskell2010
+
+executable http-demo-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_haskell_wiki
+  hs-source-dirs:
+      app/httpdemo
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , containers
+    , extra
+    , fmt
+    , haskell-wiki
+    , mtl
+    , optparse-applicative
     , parsec
     , template-haskell
     , text
@@ -135,6 +161,7 @@ test-suite haskell-wiki-test
     , fmt
     , haskell-wiki
     , mtl
+    , optparse-applicative
     , parsec
     , template-haskell
     , text

@@ -31,6 +31,7 @@ dependencies:
 - aeson
 - template-haskell
 - QuickCheck
+- optparse-applicative
 
 ghc-options:
 - -Wall
@@ -57,6 +58,15 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - haskell-wiki
+  http-demo-exe:
+    main: Main.hs
+    source-dirs: app/httpdemo
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - haskell-wiki
 
 tests:
   haskell-wiki-test:
