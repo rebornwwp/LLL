@@ -16,3 +16,10 @@ Asynchronous 异步的
 5. unidirectional 单向的 react中的单向绑定和双向绑定就是用的这两个单词
 6. Bi-directional 双向的
 7. corpus 全集, 词料库
+
+
+layman: 门外汉
+
+look south along the avenue 沿着大道向南看
+
+skyline 天际线

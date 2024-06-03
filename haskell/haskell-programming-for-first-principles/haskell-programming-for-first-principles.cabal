@@ -1,0 +1,129 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           haskell-programming-for-first-principles
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/haskell-programming-for-first-principles#readme>
+homepage:       https://github.com/githubuser/haskell-programming-for-first-principles#readme
+bug-reports:    https://github.com/githubuser/haskell-programming-for-first-principles/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2023 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/haskell-programming-for-first-principles
+
+library
+  exposed-modules:
+      Ch24.Exercise
+      Ch24.Hisp.Cli
+      Ch24.Hisp.Eval
+      Ch24.Hisp.LispVal
+      Ch24.Hisp.Parser
+      Ch24.Hisp.Prim
+      Ch24.Hisp.Repl
+      Ch24.Json
+      Ch24.LearnParsers
+      Ch24.LLVML.Codegen
+      Ch24.LLVML.Lexer
+      Ch24.LLVML.Parser
+      Ch24.LLVML.Syntax
+      Ch24.MegaP
+      Ch25.ComposeDemo
+      Ch26.A
+      Ch26.EitherTDemo
+      Ch26.Exercise
+      Ch26.MaybeTDemo
+      Ch26.ReaderTDemo
+      Ch26.StateTDemo
+  other-modules:
+      Paths_haskell_programming_for_first_principles
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , criterion
+    , haskeline
+    , hspec
+    , megaparsec
+    , mtl
+    , parsec
+    , raw-strings-qq
+    , scientific
+    , text
+    , transformers
+    , trifecta
+    , vector
+    , zlib
+  default-language: Haskell2010
+
+executable haskell-programming-for-first-principles-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_haskell_programming_for_first_principles
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , criterion
+    , haskeline
+    , haskell-programming-for-first-principles
+    , hspec
+    , megaparsec
+    , mtl
+    , parsec
+    , raw-strings-qq
+    , scientific
+    , text
+    , transformers
+    , trifecta
+    , vector
+    , zlib
+  default-language: Haskell2010
+
+test-suite haskell-programming-for-first-principles-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_haskell_programming_for_first_principles
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , criterion
+    , haskeline
+    , haskell-programming-for-first-principles
+    , hspec
+    , megaparsec
+    , mtl
+    , parsec
+    , raw-strings-qq
+    , scientific
+    , text
+    , transformers
+    , trifecta
+    , vector
+    , zlib
+  default-language: Haskell2010
