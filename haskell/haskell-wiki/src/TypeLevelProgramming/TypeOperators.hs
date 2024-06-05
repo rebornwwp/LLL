@@ -3,14 +3,17 @@
 
 module TypeLevelProgramming.TypeOperators where
 
-
+-- for about operator symbol:
+-- https://typeclasses.com/identifiers-and-operators#type-operators
+-- https://typeclasses.com/ghc/type-operators
+-- 开启TypeOperators，就可以使用operator symbols 在type level上
+-- 不开启，就会在标准haskell下，就只能在value level上使用
 -- 对类型做操作，创建新的类型
 -- The element of the sum is a value of either left or right type.
 data a + b
   = Inl a
   | Inr b
   deriving (Show)
-
 
 -- The element of the product contains values of both left and right types.
 data a * b =
@@ -20,7 +23,6 @@ data a * b =
 infixl 6 +
 
 infixl 7 *
-
 
 -- we have types like Bool + Int or String * Maybe Integer with values like Inl False or "Hello" :*: Nothing,
 first :: a * b -> a
@@ -34,7 +36,6 @@ val1 = Inl 0
 
 val2 :: Int + Bool * Bool
 val2 = Inr (True :*: False)
-
 
 -- type synonyms
 -- The value of the Point type may be used to store a point
