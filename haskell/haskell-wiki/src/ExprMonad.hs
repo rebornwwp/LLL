@@ -1,9 +1,9 @@
-{-# LANGUAGE DeriveFunctor #-}
-{-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE DeriveFunctor         #-}
+{-# LANGUAGE FlexibleContexts      #-}
+{-# LANGUAGE FlexibleInstances     #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE OverlappingInstances #-}
-{-# LANGUAGE TypeOperators #-}
+{-# LANGUAGE OverlappingInstances  #-}
+{-# LANGUAGE TypeOperators         #-}
 
 module ExprMonad where
 
