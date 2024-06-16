@@ -63,7 +63,7 @@ library
       TestA
       TraceExample
       TypeInferenceExample
-      TypeLevelProgramming.Basic
+      TypeLevelProgramming.DataKinds.Basic
       TypeLevelProgramming.DataKinds.TempKinds
       TypeLevelProgramming.GADTExample
       TypeLevelProgramming.Origin1

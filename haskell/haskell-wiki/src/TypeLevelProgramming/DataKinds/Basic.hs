@@ -5,7 +5,7 @@
 {-# LANGUAGE UndecidableInstances #-}
 {-# OPTIONS_GHC -Wunticked-promoted-constructors #-}
 
-module TypeLevelProgramming.Basic where
+module TypeLevelProgramming.DataKinds.Basic where
 
 -- https://www.parsonsmatt.org/2017/04/26/basic_type_level_programming_in_haskell.html
 -- https://serokell.io/blog/datakinds-are-not-what-you-think
