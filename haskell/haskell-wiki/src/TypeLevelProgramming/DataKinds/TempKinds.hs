@@ -12,7 +12,6 @@ import           Data.Proxy   (Proxy (..))
 import           GHC.TypeLits (KnownNat, KnownSymbol, Nat, Symbol, natVal,
                                symbolVal)
 
-
 -- With DataKinds enabled, this line defines both the TempUnits data type with values F and C
 -- and the TempUnits kind with types F ('F) and C ('C) belonging to it
 -- 通过 这种方式，我们将 F C 进阶到 Type， TempUnits进阶到Kind
@@ -35,17 +34,17 @@ paperBurning = 451
 absoluteZero :: Temp 'C
 absoluteZero = -273.15
 
-f2c :: Temp F -> Temp C
+f2c :: Temp 'F -> Temp 'C
 f2c (Temp f) = Temp ((f - 32) * 5 / 9)
 
 class UnitName (u :: TempUnits) where
   unitName :: String
 
-instance UnitName F where
+instance UnitName 'F where
   unitName :: String
   unitName = "F"
 
-instance UnitName C where
+instance UnitName 'C where
   unitName :: String
   unitName = "C"
 
@@ -71,7 +70,6 @@ testmain1 :: IO ()
 testmain1 = do
   printTemp paperBurning
   printTemp absoluteZero
-
 
 -- type level literals
 -- Nat for natural numbers, such as 0, 1, 2,…—These literals become types under promotion.
@@ -102,7 +100,6 @@ zeroPtr = Pointer 0
 inc :: Pointer align -> Pointer align
 inc (Pointer p) = Pointer (p + 1)
 
-
 -- 使用knownNat和natVal来实现align从type level到term level的转换, 在函数层面使用
 -- The KnownNat type class defines the natVal method, which takes a type-level
 -- natural literal to its term-level integer counterpart.
@@ -120,7 +117,7 @@ maybePtr ::
   -> Maybe (Pointer align)
 maybePtr p
   | remainder == 0 = Just (Pointer quotient)
-  | otherwise      = Nothing
+  | otherwise = Nothing
   where
     (quotient, remainder) = divMod p (natVal (Proxy :: Proxy align))
 
