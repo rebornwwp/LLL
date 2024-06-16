@@ -6,6 +6,9 @@
 [WHAT I WISH I KNEW WHEN LEARNING HASKELL](https://smunix.github.io/dev.stephendiehl.com/hask/index.html)
 [typeclasses sitemap](https://typeclasses.com/sitemap)
 [Extensions](https://typeclasses.com/ghc/extensions)
+[haskell by example like golang by example](https://lotz84.github.io/haskellbyexample/)
+[haskell](https://lotz84.github.io/haskell/)
+[WilliamYao blog](https://williamyaoh.com/)
 
 ### Monad
 

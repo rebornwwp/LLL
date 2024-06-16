@@ -24,6 +24,7 @@ data PolybarColorScheme =
     , visibleWorkspaceBackground :: RGB
     }
 
+polybarColorScheme :: PolybarColorScheme
 polybarColorScheme =
   PolybarColorScheme
     { focusedWorkspaceText = RGB 0xdd 0xa0 0xdd
@@ -94,6 +95,7 @@ newtype ThemeInstance =
     { getThemeInstance :: Map.Map String SomeColor
     }
 
+t :: ThemeInstance
 t =
   ThemeInstance $
   Map.insert

@@ -38,6 +38,7 @@ library
       HelloWorld.CD1
       HTTPDemo.Demo
       IORefLib
+      JSONDemo.JsonDemo
       Lib
       Memoization
       MetaProgramming.Corece
