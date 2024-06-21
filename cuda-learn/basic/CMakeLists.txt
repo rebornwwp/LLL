@@ -1,0 +1,8 @@
+add_executable(hello hello.cu)
+add_executable(add add.cu)
+add_executable(vector_add vector_add.cu)
+add_executable(matrix_mul matrix_mul.cu)
+add_executable(kernel_function_parameters kernel_function_parameters.cu)
+add_executable(kernel_launch_parameters kernel_launch_parameters.cu)
+add_executable(functions_call functions_call.cu)
+add_executable(atomic_functions atomic_functions.cu)

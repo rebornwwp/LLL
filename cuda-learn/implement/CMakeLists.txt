@@ -1,0 +1,1 @@
+add_executable(performance_metrics performance_metrics.cu)
