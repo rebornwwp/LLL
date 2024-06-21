@@ -23,3 +23,8 @@ layman: 门外汉
 look south along the avenue 沿着大道向南看
 
 skyline 天际线
+
+Generalized newtype derivingGHC documentation for GeneralizedNewtypeDeriving {has been around since} GHC 5.04
+has been around since 从那以后一直存在
+
+
