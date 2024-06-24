@@ -1,0 +1,1 @@
+add_executable(error_handle error_handle.cu)
