@@ -10,10 +10,15 @@
 [haskell](https://lotz84.github.io/haskell/)
 [WilliamYao blog](https://williamyaoh.com/)
 [FPComplete promote](https://www.fpcomplete.com/haskell/promote/)
+[FPComplte learning material](https://www.fpcomplete.com/haskell/learn/)
 
 ### Monad
 
 [Monad Laws](http://wiki.haskell.org/Monad_laws)
+
+### Applicative
+
+[basic](https://www.fpcomplete.com/haskell/tutorial/applicative-syntax/)
 
 ### Monad Transformer
 
