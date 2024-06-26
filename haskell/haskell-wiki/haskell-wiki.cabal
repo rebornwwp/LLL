@@ -25,11 +25,16 @@ source-repository head
 
 library
   exposed-modules:
+      Basic.Closures
       Basic.DataUse
+      Basic.For
+      Basic.Routine
       CodeWars
       CodeWars1
       EnumEq
       EnumEqMain
+      Exercise.AAddBEqualBAddA
+      Exercise.OddsAndEvens
       ExprMonad
       ExprNormal
       Extensions.Kinds

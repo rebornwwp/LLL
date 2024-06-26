@@ -12,3 +12,8 @@ empty = XBA {a = "", b = ""}
 
 hasty :: X
 hasty = empty {a = "xx"}
+
+testmain :: IO ()
+testmain = do
+  print $ a hasty
+  print $ a empty

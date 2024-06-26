@@ -7,6 +7,7 @@ module Main
 import           Control.Monad       (forM_)
 import           Control.Monad.Cont  (ContT (runContT), MonadCont (callCC),
                                       MonadIO (liftIO))
+
 -- import qualified Data.ByteString.Lazy.Char8 as L8
 -- import           Network.HTTP.Simple
 import           Options.Applicative

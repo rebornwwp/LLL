@@ -9,6 +9,7 @@
 [haskell by example like golang by example](https://lotz84.github.io/haskellbyexample/)
 [haskell](https://lotz84.github.io/haskell/)
 [WilliamYao blog](https://williamyaoh.com/)
+[FPComplete promote](https://www.fpcomplete.com/haskell/promote/)
 
 ### Monad
 
@@ -17,3 +18,9 @@
 ### Monad Transformer
 
 1. https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.71.596&rep=rep1&type=pdf
+
+
+TODO:
+
+1. IOREF
+2. typeFamily
