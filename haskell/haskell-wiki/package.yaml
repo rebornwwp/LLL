@@ -33,6 +33,10 @@ dependencies:
 - QuickCheck
 - optparse-applicative
 - aeson
+- deepseq
+- unliftio
+- vector
+- rio
 
 ghc-options:
 - -Wall
