@@ -37,6 +37,9 @@ dependencies:
 - unliftio
 - vector
 - rio
+- stm
+- random
+- bytestring
 
 ghc-options:
 - -Wall

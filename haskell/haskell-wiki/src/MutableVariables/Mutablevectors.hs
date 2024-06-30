@@ -1,9 +1,8 @@
-module Mutablevectors where
+module MutableVariables.Mutablevectors where
 
-
-import RIO
 import           Control.Monad
 import qualified Data.Vector.Unboxed.Mutable as V
+import           RIO
 
 main :: IO ()
 main = do

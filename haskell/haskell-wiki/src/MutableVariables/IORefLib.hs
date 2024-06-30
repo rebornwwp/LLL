@@ -1,4 +1,4 @@
-module IORefLib where
+module MutableVariables.IORefLib where
 
 import           Control.Monad
 import           Data.IORef
@@ -46,3 +46,18 @@ sumNumbers = newIORef 0 >>= go
       readMaybe <$> getLine
     processNumber acc Nothing  = readIORef acc
     processNumber acc (Just n) = modifyIORef' acc (+ n) >> go acc
+
+-- good example
+mainIORef :: IO ()
+mainIORef
+  -- Create a new reference
+ = do
+  ref <- newIORef "Hello"
+  {- Original code
+  origVal <- readIORef ref
+  writeIORef ref (origVal ++ " World")
+  -}
+  -- Cheekier version
+  modifyIORef ref (++ " World")
+  newVal <- readIORef ref
+  putStrLn newVal

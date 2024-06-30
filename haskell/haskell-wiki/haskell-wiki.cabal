@@ -30,6 +30,7 @@ library
       Basic.For
       Basic.Lazy
       Basic.Routine
+      Basic.StringDemo
       CodeWars
       CodeWars1
       EnumEq
@@ -43,7 +44,6 @@ library
       HelloWorld.ALaCarte
       HelloWorld.CD1
       HTTPDemo.Demo
-      IORefLib
       JSONDemo.JsonDemo
       Lib
       Memoization
@@ -56,7 +56,10 @@ library
       MetaProgramming.TemplateHaskell
       MetaProgramming.TemplatehaskellTest
       MetaProgramming.Via
-      Mutablevectors
+      MutableVariables.IORefLib
+      MutableVariables.Mutablevectors
+      MutableVariables.MVar
+      MutableVariables.STMLib
       NewTypeExample
       ParsecParserExpr
       PointExample
@@ -64,6 +67,7 @@ library
       ReaderTLib
       ReaderWriterStateLib
       ReadShow
+      RIODemo.RIOexample
       SafeHaskell
       SQLParser
       StateExample
@@ -93,6 +97,7 @@ library
     , QuickCheck
     , aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , deepseq
     , extra
@@ -100,7 +105,9 @@ library
     , mtl
     , optparse-applicative
     , parsec
+    , random
     , rio
+    , stm
     , template-haskell
     , text
     , unliftio
@@ -119,6 +126,7 @@ executable haskell-wiki-exe
     , QuickCheck
     , aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , deepseq
     , extra
@@ -127,7 +135,9 @@ executable haskell-wiki-exe
     , mtl
     , optparse-applicative
     , parsec
+    , random
     , rio
+    , stm
     , template-haskell
     , text
     , unliftio
@@ -146,6 +156,7 @@ executable http-demo-exe
     , QuickCheck
     , aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , deepseq
     , extra
@@ -154,7 +165,9 @@ executable http-demo-exe
     , mtl
     , optparse-applicative
     , parsec
+    , random
     , rio
+    , stm
     , template-haskell
     , text
     , unliftio
@@ -176,6 +189,7 @@ test-suite haskell-wiki-test
     , QuickCheck
     , aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , deepseq
     , extra
@@ -184,7 +198,9 @@ test-suite haskell-wiki-test
     , mtl
     , optparse-applicative
     , parsec
+    , random
     , rio
+    , stm
     , template-haskell
     , text
     , unliftio
