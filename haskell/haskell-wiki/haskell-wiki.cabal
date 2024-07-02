@@ -28,6 +28,7 @@ library
       Basic.Closures
       Basic.DataUse
       Basic.For
+      Basic.Hello
       Basic.Lazy
       Basic.Routine
       Basic.StringDemo
