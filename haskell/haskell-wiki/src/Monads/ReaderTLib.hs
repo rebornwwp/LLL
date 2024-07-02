@@ -1,4 +1,4 @@
-module ReaderTLib
+module Monads.ReaderTLib
   ( main1
   ) where
 

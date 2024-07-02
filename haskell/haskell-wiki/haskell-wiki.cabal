@@ -57,6 +57,11 @@ library
       MetaProgramming.TemplateHaskell
       MetaProgramming.TemplatehaskellTest
       MetaProgramming.Via
+      Monads.ReaderLib
+      Monads.ReaderTLib
+      Monads.ReaderWriterStateLib
+      Monads.StateExample
+      Monads.WriterLib
       MutableVariables.IORefLib
       MutableVariables.Mutablevectors
       MutableVariables.MVar
@@ -64,14 +69,10 @@ library
       NewTypeExample
       ParsecParserExpr
       PointExample
-      ReaderLib
-      ReaderTLib
-      ReaderWriterStateLib
       ReadShow
       RIODemo.RIOexample
       SafeHaskell
       SQLParser
-      StateExample
       TestA
       TraceExample
       TypeInferenceExample
@@ -87,7 +88,6 @@ library
       TypeLevelProgramming.TypeFamily.DataFamilies
       TypeLevelProgramming.TypeFamily.OpenAndCloseTypeSynonymFamilies
       TypeLevelProgramming.TypeOperators
-      WriterLib
   other-modules:
       Paths_haskell_wiki
   hs-source-dirs:

@@ -1,4 +1,4 @@
-module StateExample
+module Monads.StateExample
   ( main1
   ) where
 

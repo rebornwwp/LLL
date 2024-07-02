@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ViewPatterns      #-}
 
-module WriterLib
+module Monads.WriterLib
   ( writerMain
   ) where
 
