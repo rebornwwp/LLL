@@ -1,10 +1,18 @@
+{-# LANGUAGE ExistentialQuantification #-}
+
 module Basic.Hello where
 
-moveZeros :: [Int] -> [Int]
-moveZeros is = go is [] []
-  where
-    go (x:xs) notZeros zeros =
-      if x /= 0
-        then go xs (notZeros ++ [x]) zeros
-        else go xs notZeros (x : zeros)
-    go [] notZeros zeros = notZeros ++ zeros
+data ABC a b c =
+  ABC
+    { xa :: a
+    , xb :: b
+    , xc :: c
+    }
+
+data AB x y =
+  forall b. Show b =>
+            AB
+              { ui :: b
+              , uo :: x
+              , up :: y
+              }

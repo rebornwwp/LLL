@@ -41,6 +41,7 @@ library
       ExprMonad
       ExprNormal
       Extensions.Kinds
+      FFI.First
       HelloWorld.A
       HelloWorld.ALaCarte
       HelloWorld.CD1

@@ -30,6 +30,7 @@ TODO:
 1. IOREF
 2. typeFamily
 
+## roadmap
 
 Learn to read function definition syntax, sans any extensions
 
@@ -108,3 +109,38 @@ You're now an intermediate Haskeller.
 There is no set path to guru, but there should now be nothing in between you and learning to write an arbitrarily complex and idiomatic Haskell program.
 
 There is a lot of stuff to learn past this point - a whole world. But it gets extremely non-linear past this point, with a lot of topics of varying complexity and utility, and it starts getting a lot less universally applicable.
+
+## 一些总结
+
+[文档](https://github.com/Dobiasd/articles/blob/master/from_oop_to_fp_-_inheritance_and_the_expression_problem.md) 
+此文档中给出了一种类似面向对象，多个继承类基于一个基类，可以存储在同一个list中，函数式编程中如何将多个不同类型集成到同一类型并放到同一个同构的list中
+
+### how to export functions and types
+
+https://sakshamsharma.com/2018/03/haskell-proj-struct/
+
+``` haskell
+module MyExports ( SomeTypeWithoutItsFxns -- 此方式的时候只有type被export, data constructor不会被export
+                 , SomeOtherType(..) -- 所有都会被export
+                 , something
+                 , module MyMinorExports -- MyMinorExports中export的，也会在这里被export
+                 , MyMajorExports.SomeType(..) -- 如果SomeType 和相关field function被export，这里也会export
+                 , MyMinorExports.fxnToHandleType
+                 ) where
+
+import MyMinorExports
+import MyMajorExports
+
+data SomeTypeWithoutItsFxns = SomeTypeWithoutItsFxns { unexportedMember1 :: Int
+                                                     , unexportedMember2 :: Bool
+                                                     }
+
+data SomeOtherType = SomeOtherType { member1 :: Int
+                                   , member2 :: Bool
+                                   }
+
+something :: Int -> Bool -> SomeTypeWithoutItsFxns
+something i b = SomeTypeWithoutItsFxns { unexportedMember1 = i
+                                       , unexportedMember2 = b
+                                       }
+```
