@@ -2,8 +2,7 @@
 
 module Basic.Hello where
 
-import           Control.Applicative
-import           Debug.Trace         (trace)
+import           Debug.Trace (traceM)
 
 data ABC a b c =
   ABC
@@ -71,8 +70,10 @@ runParser (NilP x) args = Just (x, args)
 runParser (ConsP _ _) [] = Nothing
 runParser p (arg:args) =
   case stepParser p arg args of
-    Nothing          -> Nothing
-    Just (p', args') -> runParser p' args'
+    Nothing -> Nothing
+    Just (p', args') -> do
+      traceM (show args')
+      runParser p' args'
 
 stepParser :: Parser a -> String -> [String] -> Maybe (Parser a, [String])
 stepParser p arg args =
@@ -83,7 +84,6 @@ stepParser p arg args =
         case args of
           [] -> Nothing
           (value:args') -> do
-            trace (show args') pure ()
             f <- optParser opt value
             return (fmap f rest, args')
       | otherwise -> do
