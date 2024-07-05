@@ -12,7 +12,7 @@ import           ReaderLib            (initEmail, main1, view, view')
 import qualified ReaderTLib           as RT
 import qualified SafeHaskell          as SH
 import qualified StateExample         as S
-import           TraceExample         (trancemain)
+import           TraceExample         (tracemain)
 import qualified WriterLib            as W
 
 main :: IO ()
@@ -25,7 +25,7 @@ main
   --   print $ runReader initEmail email
  = do
   main1
-  trancemain
+  tracemain
   Point.main1
   W.writerMain
   S.main1

@@ -39,11 +39,11 @@ printValue (S s) = print s
 -- that there is no parameter in the WrappedDynValue type. 没有类型参数了
 -- 将多种类型 DynValue String、DynValue Bool、DynValue Char 封装成同一种类型，此类型没有类型参数
 -- The a type variable used in the Wrap constructor is traditionally called existential(存在变量)
--- existential 存在一个value种
 data WrappedDynValue where
   Wrap :: DynValue a -> WrappedDynValue
 
 -- existential type example
+-- existential 存在一个value中，此方式类型变量在右边
 data SomeException =
   forall e. Exception e =>
             SomeException e

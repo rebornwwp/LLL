@@ -1,5 +1,7 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 
+module FFI.First where
+
 -- https://en.wikibooks.org/wiki/Haskell/FFI
 import           Foreign
 import           Foreign.C.Types
