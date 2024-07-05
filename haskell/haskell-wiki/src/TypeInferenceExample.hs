@@ -21,4 +21,5 @@ size (Bin _ t) = 1 + 2 * size t
 default (T.Text, String)
 
 -- example :: T.Text
+example :: T.Text
 example = "foo"

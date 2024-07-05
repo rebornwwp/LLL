@@ -1,10 +1,9 @@
-module ReaderLib
+module Monads.ReaderLib
   ( view
   , view'
   , main1
   , initEmail
   ) where
-
 
 -- https://engineering.dollarshaveclub.com/the-reader-monad-example-motivation-542c54ccfaa8
 import           Control.Monad.Reader (MonadIO (liftIO),
@@ -53,7 +52,6 @@ article email = div [p ["this is an article"], widget email]
 
 widget :: Email -> Html
 widget email = div [p ["Hey " ++ email ++ ", we've got a great offer for you!"]]
-
 
 --
 -- newtype Reader e a = Reader { runReader :: e -> a }
@@ -112,7 +110,6 @@ calculateContentLen :: Reader String Int
 --   length <$> ask
 calculateContentLen = asks length
 
-
 -- Calls calculateContentLen after adding a prefix to the Reader content.
 calculateModifiedContentLen :: Reader String Int
 calculateModifiedContentLen = local ("Prefix " ++) calculateContentLen
@@ -133,7 +130,6 @@ main1 = do
   print ex1
   print ex2
   print $ runReader (reader (const 8)) 10
-
 
 -- another example from What I wish
 data MyContext =

@@ -1,5 +1,3 @@
-{-# LANGUAGE ExistentialQuantification #-}
-
 module Basic.Hello where
 
 data ABC a b c =
