@@ -1,5 +1,6 @@
 module Basic.FunctionComposition where
 
+{- function composition -}
 -- 逻辑上，先执行f2,再执行f1
 dot :: (b -> c) -> (a -> b) -> a -> c
 dot f1 f2 = (.) f1 f2
@@ -44,3 +45,7 @@ fx' = (.) helper
 
 fid :: (a -> c) -> a -> c
 fid = (id .)
+
+{- function apply -}
+x :: Show a => a -> IO ()
+x y = print $ show y
