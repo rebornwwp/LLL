@@ -28,6 +28,7 @@ library
       Basic.Closures
       Basic.DataUse
       Basic.For
+      Basic.FunctionComposition
       Basic.Hello
       Basic.Lazy
       Basic.Routine
@@ -69,6 +70,8 @@ library
       MutableVariables.MVar
       MutableVariables.STMLib
       NewTypeExample
+      Optparse.Basic
+      Optparse.Demo
       ParsecParserExpr
       PointExample
       ReadShow
