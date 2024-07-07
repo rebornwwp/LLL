@@ -29,6 +29,7 @@ TODO:
 
 1. IOREF
 2. typeFamily
+2. free-applicative free-monad or free-functor???
 
 ## roadmap
 
@@ -114,6 +115,8 @@ There is a lot of stuff to learn past this point - a whole world. But it gets ex
 
 [文档](https://github.com/Dobiasd/articles/blob/master/from_oop_to_fp_-_inheritance_and_the_expression_problem.md) 
 此文档中给出了一种类似面向对象，多个继承类基于一个基类，可以存储在同一个list中，函数式编程中如何将多个不同类型集成到同一类型并放到同一个同构的list中
+
+[best practice](https://github.com/freckle/guides/blob/main/haskell-best-practices.md)
 
 ### how to export functions and types
 
