@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ViewPatterns      #-}
 
-module Monads.WriterLib
+module FunctorApplicativeMonad.Monads.WriterLib
   ( writerMain
   ) where
 

@@ -2,18 +2,19 @@ module Main
   ( main
   ) where
 
-import qualified CodeWars             as CW
-import qualified CodeWars1            as CW1
-import           Control.Monad.Reader (runReader)
-import           Lib                  ()
-import qualified NewTypeExample       as NT
-import qualified PointExample         as Point
-import           ReaderLib            (initEmail, main1, view, view')
-import qualified ReaderTLib           as RT
-import qualified SafeHaskell          as SH
-import qualified StateExample         as S
-import           TraceExample         (tracemain)
-import qualified WriterLib            as W
+import qualified CodeWars                                    as CW
+import qualified CodeWars1                                   as CW1
+import           Control.Monad.Reader                        (runReader)
+import           FunctorApplicativeMonad.Monads.ReaderLib    (initEmail, main1,
+                                                              view, view')
+import qualified FunctorApplicativeMonad.Monads.ReaderTLib   as RT
+import qualified FunctorApplicativeMonad.Monads.StateExample as S
+import qualified FunctorApplicativeMonad.Monads.WriterLib    as W
+import           Lib                                         ()
+import qualified NewTypeExample                              as NT
+import qualified PointExample                                as Point
+import qualified SafeHaskell                                 as SH
+import           TraceExample                                (tracemain)
 
 main :: IO ()
 main

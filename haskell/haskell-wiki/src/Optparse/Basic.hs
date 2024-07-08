@@ -1,3 +1,5 @@
+{-# LANGUAGE GADTs #-}
+
 module Optparse.Basic where
 
 import           Debug.Trace (traceM)

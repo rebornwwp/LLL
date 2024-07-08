@@ -1,4 +1,4 @@
-module Monads.ReaderLib
+module FunctorApplicativeMonad.Monads.ReaderLib
   ( view
   , view'
   , main1

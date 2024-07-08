@@ -1,4 +1,4 @@
-module Monads.ReaderTLib
+module FunctorApplicativeMonad.Monads.ReaderTLib
   ( main1
   ) where
 

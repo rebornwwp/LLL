@@ -44,6 +44,11 @@ library
       ExprNormal
       Extensions.Kinds
       FFI.First
+      FunctorApplicativeMonad.Monads.ReaderLib
+      FunctorApplicativeMonad.Monads.ReaderTLib
+      FunctorApplicativeMonad.Monads.ReaderWriterStateLib
+      FunctorApplicativeMonad.Monads.StateExample
+      FunctorApplicativeMonad.Monads.WriterLib
       HelloWorld.A
       HelloWorld.ALaCarte
       HelloWorld.CD1
@@ -60,11 +65,6 @@ library
       MetaProgramming.TemplateHaskell
       MetaProgramming.TemplatehaskellTest
       MetaProgramming.Via
-      Monads.ReaderLib
-      Monads.ReaderTLib
-      Monads.ReaderWriterStateLib
-      Monads.StateExample
-      Monads.WriterLib
       MutableVariables.IORefLib
       MutableVariables.Mutablevectors
       MutableVariables.MVar

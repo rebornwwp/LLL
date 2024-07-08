@@ -1,4 +1,4 @@
-module Monads.StateExample
+module FunctorApplicativeMonad.Monads.StateExample
   ( main1
   ) where
 
