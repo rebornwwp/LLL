@@ -20,6 +20,8 @@ books: https://developer.nvidia.com/cuda-books-archive
 
 cuda: https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#
 
+cuda-example: https://github.com/CUDA-Tutorial/CodeSamples/tree/main
+
 ## package based on cuda
 
 https://cupy.dev/
