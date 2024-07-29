@@ -1,4 +1,4 @@
-# learn rust
+# learn rust https://course.rs/basic/base-type/char-bool.html
 
 ## Common Programming Concepts
 
