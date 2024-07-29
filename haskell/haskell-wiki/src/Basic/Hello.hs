@@ -18,3 +18,16 @@ data AB x y =
               , uo :: x
               , up :: y
               }
+
+data Option a =
+  Option
+    { optName   :: String
+    , optParser :: String -> Maybe a
+    }
+
+instance Functor Option where
+  fmap f (Option name p) = Option name (fmap f . p)
+
+data Parser a where
+  NilP :: a -> Parser a
+  ConsP :: Option (a -> b) -> Parser a -> Parser b

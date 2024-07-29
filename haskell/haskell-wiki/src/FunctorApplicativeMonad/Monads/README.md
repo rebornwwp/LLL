@@ -103,6 +103,7 @@ mapM :: (Traversable t, Monad m) => (a -> m b) -> t a -> m (t b)
 mapM_ :: (Foldable t, Monad m) => (a -> m b) -> t a -> m ()
 (=<<) :: Monad m => (a -> m b) -> m a -> m b
 zipWithM :: Applicative m => (a -> b -> m c) -> [a] -> [b] -> m [c]
+liftM :: Monad m => (a1 -> r) -> m a1 -> m r
 ```
 
 ### monad instances

@@ -33,17 +33,23 @@ library
       Basic.Lazy
       Basic.Routine
       Basic.StringDemo
+      Basic.Unit
       Benchmark.BenchmarkExample
       CodeWars
       CodeWars1
+      CoreLanguage.Ast
       EnumEq
       EnumEqMain
+      ExceptionDemo.ArithException
       Exercise.AAddBEqualBAddA
       Exercise.OddsAndEvens
       ExprMonad
       ExprNormal
       Extensions.Kinds
       FFI.First
+      FmtDemo.FmtDemo
+      FunctorApplicativeMonad.Applicative.A
+      FunctorApplicativeMonad.FreeMonads.Demo
       FunctorApplicativeMonad.Monads.ReaderLib
       FunctorApplicativeMonad.Monads.ReaderTLib
       FunctorApplicativeMonad.Monads.ReaderWriterStateLib

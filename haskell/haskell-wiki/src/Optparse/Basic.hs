@@ -2,6 +2,7 @@
 
 module Optparse.Basic where
 
+-- https://www.paolocapriotti.com/blog/2012/04/27/applicative-option-parser/
 import           Debug.Trace (traceM)
 
 data Option a =
@@ -39,6 +40,9 @@ instance Applicative Parser where
 -- TODO: NilP () 这样的用法, 需要看为啥这样做
 option :: String -> (String -> Maybe a) -> Parser a
 option name p = ConsP (fmap const (Option name p)) (NilP ())
+
+xx :: String -> (String -> Maybe a) -> Option (b -> a)
+xx name p = fmap const (Option name p)
 
 optionR :: Read a => String -> Parser a
 optionR name = option name p

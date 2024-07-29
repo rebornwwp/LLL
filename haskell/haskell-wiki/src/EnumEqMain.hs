@@ -1,20 +1,17 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings  #-}
 {-# LANGUAGE StandaloneDeriving #-}
 {-# OPTIONS_GHC -Wno-orphans #-}
 
 module EnumEqMain where
 
-import EnumEq
-  ( Direction(East, North, South, West)
-  , Turn(TAround, TLeft, TNone, TRight)
-  , orientMany
-  , rotateMany
-  , rotateManySteps
-  )
+import           EnumEq             (Direction (East, North, South, West),
+                                     Turn (TAround, TLeft, TNone, TRight),
+                                     orientMany, rotateMany, rotateManySteps)
 
-import System.Environment (getArgs)
+import           System.Environment (getArgs)
 
-import Fmt (Buildable(..), (+||), (||+), fmt, fmtLn, nameF, unwordsF)
+import           Fmt                (Buildable (..), fmt, fmtLn, nameF,
+                                     unwordsF, (+||), (||+))
 
 -- used for IO and read
 deriving instance Read Direction
@@ -23,14 +20,14 @@ deriving instance Read Turn
 
 instance Buildable Direction where
   build North = "N"
-  build East = "E"
+  build East  = "E"
   build South = "S"
-  build West = "W"
+  build West  = "W"
 
 instance Buildable Turn where
-  build TNone = "--"
-  build TLeft = "<-"
-  build TRight = "->"
+  build TNone   = "--"
+  build TLeft   = "<-"
+  build TRight  = "->"
   build TAround = "||"
 
 rotateFromFile :: Direction -> FilePath -> IO ()
