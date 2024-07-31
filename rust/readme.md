@@ -1,4 +1,8 @@
-# learn rust https://course.rs/basic/base-type/char-bool.html
+# learn rust
+
+* https://course.rs/basic/base-type/char-bool.html
+* https://doc.rust-lang.org/rust-by-example/fn/closures.html
+* https://doc.rust-lang.org/book/
 
 ## Common Programming Concepts
 
@@ -23,7 +27,7 @@ let z: i32 = 5;
 
 // scope and shadowing
 fn main() {
-    // 变量绑定在一个作用域中，限制在被定义的快块中，{}包含之中
+    // 变量绑定在一个作用域中, 限制在被定义的快块中，{}包含之中
     let x: i32 = 17;
     {
         let y: i32 = 3;
