@@ -39,18 +39,14 @@ data ExampleColor
 class ExampleClass (color :: ExampleColor) where
   sayColor :: String
 
-instance ExampleClass 'Red
- where
+instance ExampleClass 'Red where
   sayColor = "red"
 
-instance ExampleClass 'Green
- where
+instance ExampleClass 'Green where
   sayColor = "green"
 
-instance ExampleClass 'Blue
- where
+instance ExampleClass 'Blue where
   sayColor = "blue"
-
 
 -- >> (sayColor @Red, sayColor @Green, sayColor @Blue)
 {-
@@ -60,7 +56,6 @@ instance ExampleClass 'Blue
 • In the first argument of ‘ExampleClass’, namely ‘Int’
   In the instance declaration for ‘ExampleClass Int’typecheck
 -}
-
 -- Example: Type level List
 data List a
   = Empty
@@ -71,7 +66,6 @@ data List a
 Cons Red (Cons Green (Cons Blue Empty)) :: List ExampleColor
 = 'Cons 'Red ('Cons 'Green ('Cons 'Blue 'Empty))
 -}
-
 -- define infix type level operators
 type a :+: b = 'Cons a b
 

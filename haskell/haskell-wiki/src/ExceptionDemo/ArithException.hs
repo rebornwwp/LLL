@@ -3,10 +3,9 @@
 module ExceptionDemo.ArithException where
 
 import           Control.Exception (throw, throwIO)
-import           GHC.Base          (VecElem (Int16ElemRep))
 import           RIO               (MonadThrow (throwM), catch, try, tryJust)
 import           RIO.Prelude
-import           RIO.Prelude.Types (Exception, MonadThrow)
+import           RIO.Prelude.Types (Exception)
 
 data MyArithException
   = DivByZero
