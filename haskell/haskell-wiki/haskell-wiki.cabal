@@ -50,6 +50,7 @@ library
       FmtDemo.FmtDemo
       FunctorApplicativeMonad.Applicative.A
       FunctorApplicativeMonad.FreeMonads.Demo
+      FunctorApplicativeMonad.Monads.ContDemo
       FunctorApplicativeMonad.Monads.ReaderLib
       FunctorApplicativeMonad.Monads.ReaderTLib
       FunctorApplicativeMonad.Monads.ReaderWriterStateLib
