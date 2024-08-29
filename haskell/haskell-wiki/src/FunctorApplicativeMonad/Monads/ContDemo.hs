@@ -4,6 +4,7 @@ module FunctorApplicativeMonad.Monads.ContDemo where
 -- https://en.wikibooks.org/wiki/Haskell/Continuation_passing_style
 -- https://free.cofree.io/2020/01/02/cps/ 这里通过案例来介绍此方式的使用
 -- https://matt.might.net/articles/by-example-continuation-passing-style/ 通过不同语言来探讨cps
+-- https://www.haskellforall.com/2012/12/the-continuation-monad.html
 -- | 下面是函数形式
 add :: Int -> Int -> Int
 add x y = x + y

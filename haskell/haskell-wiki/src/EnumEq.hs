@@ -29,23 +29,23 @@ data Turn
   deriving (Eq, Enum, Bounded, Show)
 
 instance Semigroup Turn where
-  TNone <> t = t
-  TLeft <> TLeft = TAround
-  TLeft <> TRight = TNone
-  TLeft <> TAround = TRight
-  TRight <> TLeft = TNone
-  TRight <> TRight = TAround
-  TRight <> TAround = TLeft
+  TNone <> t         = t
+  TLeft <> TLeft     = TAround
+  TLeft <> TRight    = TNone
+  TLeft <> TAround   = TRight
+  TRight <> TLeft    = TNone
+  TRight <> TRight   = TAround
+  TRight <> TAround  = TLeft
   TAround <> TAround = TNone
-  t1 <> t2 = t2 <> t1
+  t1 <> t2           = t2 <> t1
 
 instance Monoid Turn where
   mempty = TNone
 
 rotate :: Turn -> Direction -> Direction
-rotate TNone = id
-rotate TLeft = cpred
-rotate TRight = csucc
+rotate TNone   = id
+rotate TLeft   = cpred
+rotate TRight  = csucc
 rotate TAround = csucc . csucc
 
 every :: (Enum a, Bounded a) => [a]
@@ -67,4 +67,4 @@ rotateManySteps = scanl (flip rotate)
 
 orientMany :: [Direction] -> [Turn]
 orientMany ds@(_:_:_) = zipWith orient ds (tail ds)
-orientMany _ = []
+orientMany _          = []

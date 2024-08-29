@@ -33,6 +33,7 @@ library
       Basic.Lazy
       Basic.Routine
       Basic.StringDemo
+      Basic.Tricks
       Basic.Unit
       Benchmark.BenchmarkExample
       CodeWars
@@ -50,6 +51,7 @@ library
       FmtDemo.FmtDemo
       FunctorApplicativeMonad.Applicative.A
       FunctorApplicativeMonad.FreeMonads.Demo
+      FunctorApplicativeMonad.Monads.ContBestPractices
       FunctorApplicativeMonad.Monads.ContDemo
       FunctorApplicativeMonad.Monads.ReaderLib
       FunctorApplicativeMonad.Monads.ReaderTLib
@@ -88,13 +90,17 @@ library
       TestA
       TraceExample
       TypeInferenceExample
+      TypeLevelProgramming.CoerceTypes
       TypeLevelProgramming.DataKinds.Basic
       TypeLevelProgramming.DataKinds.TempKinds
+      TypeLevelProgramming.DependentTypes
+      TypeLevelProgramming.ExitstentialTypes
       TypeLevelProgramming.GADTExample
       TypeLevelProgramming.Origin1
       TypeLevelProgramming.Origin2
       TypeLevelProgramming.Origin3
       TypeLevelProgramming.PhantomType
+      TypeLevelProgramming.Polymorphism
       TypeLevelProgramming.RankNTypes
       TypeLevelProgramming.TypeFamily.AssociatedFamilies
       TypeLevelProgramming.TypeFamily.DataFamilies

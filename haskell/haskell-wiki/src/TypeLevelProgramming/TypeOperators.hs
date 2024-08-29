@@ -8,7 +8,7 @@ module TypeLevelProgramming.TypeOperators where
 -- https://typeclasses.com/ghc/type-operators
 -- 开启TypeOperators，就可以使用operator symbols 在type level上
 -- 不开启，就会在标准haskell下，就只能在value level上使用
--- 对类型做操作，创建新的类型
+-- 对类型做操作，在 type-level 创建新的类型
 -- The element of the sum is a value of either left or right type.
 data a + b
   = Inl a
