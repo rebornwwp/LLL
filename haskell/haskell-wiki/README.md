@@ -11,6 +11,7 @@
 [WilliamYao blog](https://williamyaoh.com/)
 [FPComplete promote](https://www.fpcomplete.com/haskell/promote/)
 [FPComplte learning material](https://www.fpcomplete.com/haskell/learn/)
+[best optparse-application tutorial](https://tech.fpcomplete.com/haskell/library/optparse-applicative/)
 
 ### Monad
 
@@ -29,7 +30,9 @@ TODO:
 
 1. IOREF
 2. typeFamily
-2. free-applicative free-monad or free-functor???
+3. free-applicative free-monad or free-functor???
+4. arrows
+5. XXX
 
 ## roadmap
 
