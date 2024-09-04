@@ -50,6 +50,7 @@ library
       FFI.First
       FmtDemo.FmtDemo
       FunctorApplicativeMonad.Applicative.A
+      FunctorApplicativeMonad.Applicative.IdiomLite
       FunctorApplicativeMonad.FreeMonads.Demo
       FunctorApplicativeMonad.Monads.ContBestPractices
       FunctorApplicativeMonad.Monads.ContDemo
@@ -95,7 +96,9 @@ library
       TypeLevelProgramming.DataKinds.TempKinds
       TypeLevelProgramming.DependentTypes
       TypeLevelProgramming.ExitstentialTypes
+      TypeLevelProgramming.FunDeps
       TypeLevelProgramming.GADTExample
+      TypeLevelProgramming.Hallgren
       TypeLevelProgramming.Origin1
       TypeLevelProgramming.Origin2
       TypeLevelProgramming.Origin3
@@ -112,7 +115,8 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors
   build-depends:
-      HUnit
+      HTTP >=4000.3.15
+    , HUnit
     , QuickCheck
     , aeson
     , base >=4.7 && <5
@@ -122,6 +126,8 @@ library
     , deepseq
     , extra
     , fmt
+    , http-client
+    , http-conduit
     , mtl
     , optparse-applicative
     , parsec
@@ -142,7 +148,8 @@ executable haskell-wiki-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      HUnit
+      HTTP >=4000.3.15
+    , HUnit
     , QuickCheck
     , aeson
     , base >=4.7 && <5
@@ -153,6 +160,8 @@ executable haskell-wiki-exe
     , extra
     , fmt
     , haskell-wiki
+    , http-client
+    , http-conduit
     , mtl
     , optparse-applicative
     , parsec
@@ -173,7 +182,8 @@ executable http-demo-exe
       app/httpdemo
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      HUnit
+      HTTP >=4000.3.15
+    , HUnit
     , QuickCheck
     , aeson
     , base >=4.7 && <5
@@ -184,6 +194,8 @@ executable http-demo-exe
     , extra
     , fmt
     , haskell-wiki
+    , http-client
+    , http-conduit
     , mtl
     , optparse-applicative
     , parsec
@@ -207,7 +219,8 @@ test-suite haskell-wiki-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunticked-promoted-constructors -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      HUnit
+      HTTP >=4000.3.15
+    , HUnit
     , QuickCheck
     , aeson
     , base >=4.7 && <5
@@ -218,6 +231,8 @@ test-suite haskell-wiki-test
     , extra
     , fmt
     , haskell-wiki
+    , http-client
+    , http-conduit
     , mtl
     , optparse-applicative
     , parsec

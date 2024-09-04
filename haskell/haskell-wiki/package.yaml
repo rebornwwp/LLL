@@ -41,6 +41,9 @@ dependencies:
 - random
 - bytestring
 - criterion == 1.5.13.0
+- HTTP >= 4000.3.15
+- http-conduit
+- http-client
 
 ghc-options:
 - -Wall
