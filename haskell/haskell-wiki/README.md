@@ -28,8 +28,17 @@
 1. https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.71.596&rep=rep1&type=pdf
 
 ### parser
+
 [alex](https://github.com/serokell/blog-posts/blob/master/Alex%20and%20Happy%20Part%201/article.md)
 [happy](https://github.com/serokell/blog-posts/blob/master/Alex%20and%20Happy%20Part%202/article.md)
+
+### Template haskell
+
+[introduction](https://dev.to/serokell/a-brief-introduction-to-template-haskell-698)
+
+### Compile-time Evaluation
+
+[introduction](https://dev.to/serokell/compile-time-evaluation-in-haskell-58j4)
 
 TODO:
 

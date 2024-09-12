@@ -16,7 +16,15 @@ module MetaProgramming.TemplateHaskell
 -- Haskell in production code.
 ------------------------------------------------
 -- The [| … |] brackets are called Oxford brackets.
-import Language.Haskell.TH
+-- 
+import           Language.Haskell.TH
 
 hello :: Q Exp
 hello = [|putStrLn "Hello world"|]
+
+hello1 :: DecsQ
+hello1 =
+  [d|
+
+  decl :: Int
+  decl = 1 + 2 |]
