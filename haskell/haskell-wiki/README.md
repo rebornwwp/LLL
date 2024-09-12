@@ -12,6 +12,7 @@
 [FPComplete promote](https://www.fpcomplete.com/haskell/promote/)
 [FPComplte learning material](https://www.fpcomplete.com/haskell/learn/)
 [best optparse-application tutorial](https://tech.fpcomplete.com/haskell/library/optparse-applicative/)
+[types kinds](https://diogocastro.com/blog/2018/10/17/haskells-kind-system-a-primer/)
 
 ### Monad
 
@@ -25,6 +26,10 @@
 ### Monad Transformer
 
 1. https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.71.596&rep=rep1&type=pdf
+
+### parser
+[alex](https://github.com/serokell/blog-posts/blob/master/Alex%20and%20Happy%20Part%201/article.md)
+[happy](https://github.com/serokell/blog-posts/blob/master/Alex%20and%20Happy%20Part%202/article.md)
 
 TODO:
 
