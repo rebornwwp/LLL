@@ -38,6 +38,8 @@ library
       Benchmark.BenchmarkExample
       CodeWars
       CodeWars1
+      CompileTimeEvaluation.CompileTimeEvaluation
+      CompileTimeEvaluation.Result
       CoreLanguage.Ast
       EnumEq
       EnumEqMain
