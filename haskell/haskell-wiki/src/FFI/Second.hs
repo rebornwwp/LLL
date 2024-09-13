@@ -4,7 +4,7 @@ module FFI.Second where
 
 
 -- https://en.wikibooks.org/wiki/Haskell/FFI
-import           Foreign         (Ptr)
+import           Foreign         (FunPtr, Ptr)
 import           Foreign.C.Types
 
 
@@ -41,3 +41,11 @@ triple :: Int -> Int
 triple x = 3 * x
 
 foreign export ccall triple :: Int -> Int
+
+
+-- 混合编程
+add :: Int -> Int
+add x = x + 10
+
+foreign import ccall "wrapper" createAddPtr
+  :: (Int -> Int) -> IO (FunPtr (Int -> Int))
