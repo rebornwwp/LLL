@@ -1,20 +1,25 @@
-{-# LANGUAGE ForeignFunctionInterface #-}
+{-# LANGUAGE CApiFFI #-}
 
-module FFI.First where
+module FFI.Second where
 
 
 -- https://en.wikibooks.org/wiki/Haskell/FFI
+import           Foreign         (Ptr)
 import           Foreign.C.Types
 
 
 -- 调用 math.h 库的 sin 函数
-foreign import ccall unsafe "math.h sin" c_sin :: CDouble -> CDouble
+foreign import capi unsafe "math.h sin" c_sin :: CDouble -> CDouble
 
 
 -- 随机函数是no pure function, 需要使用IO monad来进行包装
-foreign import ccall unsafe "stdlib.h rand" c_rand :: IO CUInt
+foreign import capi unsafe "stdlib.h rand" c_rand :: IO CUInt
 
-foreign import ccall "stdlib.h srand" c_srand :: CUInt -> IO ()
+foreign import capi "stdlib.h srand" c_srand :: CUInt -> IO ()
+
+
+-- Using capi, to automatically include sys/select.h and handle the macro
+foreign import capi "sys/select.h FD_SET" c_fd_set :: CInt -> Ptr () -> IO ()
 
 
 --  working with pointer, double gsl_frexp (double x, int * e)
