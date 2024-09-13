@@ -8,10 +8,11 @@
 
 module CompileTimeEvaluation.CompileTimeEvaluation where
 
+
 -- Conclusion:
 -- Compile-time evaluation in Haskell is easily achieved with Template Haskell.
 -- Sometimes type families do a better job, but their performance is unreliable.
--- Functional dependencies are the most esoteric approach, but it also works 
+-- Functional dependencies are the most esoteric approach, but it also works
 -- in limited circumstances.
 import           Data.Proxy   (Proxy (Proxy))
 import           GHC.Natural  (Natural)

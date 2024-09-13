@@ -34,3 +34,10 @@ maintest = do
   x <- c_rand
   print x
   c_srand 10
+
+
+-- export function so that a foreign code can call haskell code
+triple :: Int -> Int
+triple x = 3 * x
+
+foreign export ccall triple :: Int -> Int
