@@ -40,6 +40,10 @@
 
 [introduction](https://dev.to/serokell/compile-time-evaluation-in-haskell-58j4)
 
+### foreign function interface
+
+[introduction](https://wiki.haskell.org/Foreign_Function_Interface)
+
 TODO:
 
 1. IOREF
@@ -47,6 +51,7 @@ TODO:
 3. free-applicative free-monad or free-functor???
 4. arrows
 5. XXX
+6. parse haskell code demo ast tree
 
 ## roadmap
 

@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.4.
+-- This file has been generated from package.yaml by hpack version 0.37.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      Basic.BestPractice
       Basic.Closures
       Basic.DataUse
       Basic.For
@@ -50,6 +51,9 @@ library
       ExprNormal
       Extensions.Kinds
       FFI.First
+      FFI.Hello_FFI.FfiEx
+      FFI.Hello_FFI.Termios
+      FFI.Second
       FmtDemo.FmtDemo
       FunctorApplicativeMonad.Applicative.A
       FunctorApplicativeMonad.Applicative.IdiomLite
@@ -76,6 +80,7 @@ library
       MetaProgramming.GenericsProgramming
       MetaProgramming.TemplateHaskell
       MetaProgramming.TemplatehaskellTest
+      MetaProgramming.TypedTemplateHaskell
       MetaProgramming.Via
       MutableVariables.IORefLib
       MutableVariables.Mutablevectors
@@ -126,7 +131,9 @@ library
     , containers
     , criterion ==1.5.13.0
     , deepseq
+    , directory
     , extra
+    , filepath
     , fmt
     , http-client
     , http-conduit
@@ -159,7 +166,9 @@ executable haskell-wiki-exe
     , containers
     , criterion ==1.5.13.0
     , deepseq
+    , directory
     , extra
+    , filepath
     , fmt
     , haskell-wiki
     , http-client
@@ -193,7 +202,9 @@ executable http-demo-exe
     , containers
     , criterion ==1.5.13.0
     , deepseq
+    , directory
     , extra
+    , filepath
     , fmt
     , haskell-wiki
     , http-client
@@ -230,7 +241,9 @@ test-suite haskell-wiki-test
     , containers
     , criterion ==1.5.13.0
     , deepseq
+    , directory
     , extra
+    , filepath
     , fmt
     , haskell-wiki
     , http-client

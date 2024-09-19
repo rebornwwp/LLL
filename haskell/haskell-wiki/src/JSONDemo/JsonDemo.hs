@@ -10,6 +10,7 @@ import           Data.Aeson   hiding (Error)
 import           Data.Text    (Text)
 import           GHC.Generics
 
+
 -- 手动创建 Object
 customValue :: Value
 customValue =
@@ -30,6 +31,7 @@ data Foo =
     }
   deriving (Show, Generic, ToJSON, FromJSON)
 
+
 --  方式2
 data Person =
   Person
@@ -40,10 +42,12 @@ data Person =
 
 instance FromJSON Person
 
+
 -- slow way
 -- instance ToJSON Person
 --  better efficiency
-instance ToJSON Person where
+instance ToJSON Person
+ where
   toEncoding = genericToEncoding defaultOptions
 
 maintest :: IO ()
@@ -53,6 +57,7 @@ maintest = do
     "Decode: " ++
     show (decode "{ \"name\": \" Joe \", \"age\": 12 }" :: Maybe Person)
 
+
 -- 通过自定义decode和encode的方式实现, 可以将不同的field进行对应起来
 data PersonA =
   PersonA
@@ -60,6 +65,7 @@ data PersonA =
     , agea  :: Int
     }
   deriving (Show)
+
 
 -- We expect a JSON object, so we fail at any non-Object value.
 instance FromJSON PersonA where
@@ -69,12 +75,15 @@ instance FromJSON PersonA where
       agea <- obj .: "age"
       return PersonA {..}
 
-instance ToJSON PersonA where
+instance ToJSON PersonA
+ where
   toJSON (PersonA name age) = object ["name" .= name, "age" .= age]
+
 
 -- Working with a arbitrary JSON data
 x :: Maybe Value
 x = decode "{ \"foo\": false, \"bar\": [1, 2, 3] }" :: Maybe Value
+
 
 -- If you have an optional field, use (.:?) instead of (.:).
 data Item =
@@ -87,9 +96,10 @@ data Item =
 instance FromJSON Item where
   parseJSON =
     withObject "Item" $ \obj -> do
-      name <- obj .: "name"
+      name <- obj .:? "name" .!= "zhangfei"
       desc <- obj .:? "description"
       return (Item {iname = name, idescription = desc})
+
 
 -- Parsing enum datatypes
 data UserType
@@ -97,16 +107,17 @@ data UserType
   | Admin
   | CustomerSupport
 
+
 -- 最简单的方式：
 --   deriving (Generic, ToJSON, FromJSON)
 -- enumparse = encode CustomerSupport
 instance FromJSON UserType where
   parseJSON =
     withText "UserType" $ \case
-      "user"           -> return User
-      "admin"          -> return Admin
+      "user" -> return User
+      "admin" -> return Admin
       "custom_support" -> return CustomerSupport
-      _                -> fail "string is not one of known enum values"
+      _ -> fail "string is not one of known enum values"
 
 data APIResult
   = JSONData Value
@@ -121,8 +132,10 @@ instance FromJSON APIResult where
         then fmap JSONData (obj .: "data")
         else fmap Error (obj .: "error_msg")
 
+
 -- goodData :: LB.ByteString
 goodData = "{\"ok\":true,\"data\":{\"foo\":2}}"
+
 
 -- badData :: LB.ByteString
 badData = "{\"ok\":false,\"error_msg\":\"no_credentials\"}"
