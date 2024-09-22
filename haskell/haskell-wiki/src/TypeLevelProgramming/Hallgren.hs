@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleInstances      #-}
 {-# LANGUAGE FunctionalDependencies #-}
 {-# LANGUAGE NoImplicitPrelude      #-}
 {-# LANGUAGE UndecidableInstances   #-}
@@ -8,7 +9,6 @@ module TypeLevelProgramming.Hallgren where
 论文中给出了type组织value， class来组织type，通过对class的合理运用，可以在type level进行computation
 具体是将type与value对应关系，相同代码反应到type-level上， 通过type-checker来执行结果，triggle的方式下面的例子是通过isOdd or isEven
 -}
-
 import           GHC.Base (undefined)
 import           RIO      hiding (even, odd)
 

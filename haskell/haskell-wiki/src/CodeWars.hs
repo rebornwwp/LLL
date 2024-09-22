@@ -12,7 +12,8 @@ import           Text.Parsec.String (Parser)
 
 data Expr
   = Add Expr Expr
-  | Sub Expr Expr
+
+  |           Sub Expr Expr
   | Mul Expr Expr
   | Div Expr Expr
   | Term Integer

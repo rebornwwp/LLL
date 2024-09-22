@@ -1,5 +1,6 @@
-{-# LANGUAGE DataKinds       #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DataKinds        #-}
+{-# LANGUAGE TemplateHaskell  #-}
+{-# LANGUAGE TypeApplications #-}
 
 module CompileTimeEvaluation.Result where
 

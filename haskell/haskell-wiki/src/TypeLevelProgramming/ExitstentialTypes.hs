@@ -1,3 +1,5 @@
+{-# LANGUAGE KindSignatures       #-}
+{-# LANGUAGE RankNTypes           #-}
 {-# LANGUAGE TypeApplications     #-}
 {-# LANGUAGE UndecidableInstances #-}
 
@@ -8,17 +10,20 @@ import           Data.Data           (Typeable, cast)
 import           Data.Kind           (Constraint, Type)
 import           Data.Maybe          (fromMaybe)
 
+
 -- Existential Types
 -- This a type exists only within the context of the Any data constructor; it is existential.
 -- 这里 类型变量 a 只存在 data constructor中，在type constructor中并不存在，此时a被叫做existential, 并且严格执行这样的方式
 data Any =
   forall a. Any a
 
+
 -- GADT 定义existential type的方式
 data AnyA where
   AnyA :: a -> AnyA
 
 x = [Any 5, Any "string"]
+
 
 -- 此为一个eliminator函数，可以消除 Any 类型
 -- Existential types can be eliminated (consumed) via continuationpassing. An eliminator is a rank-2 function
@@ -28,16 +33,14 @@ x = [Any 5, Any "string"]
 elimAny :: (forall a. a -> r) -> Any -> r
 elimAny f (Any a) = f a
 
+
 -- 这里也是一个exitential type 但是这里 Show t是一个constraint
 data HasShow where
   HasShow :: Show t => t -> HasShow
 
-elimHasShow ::
-     (forall a. Show a =>
-                  a -> r)
-  -> HasShow
-  -> r
+elimHasShow :: (forall a. Show a => a -> r) -> HasShow -> r
 elimHasShow f (HasShow a) = f a
+
 
 -- Dynamic Types
 -- The Typeable class
@@ -47,11 +50,7 @@ elimHasShow f (HasShow a) = f a
 data Dynamic where
   Dynamic :: Typeable t => t -> Dynamic
 
-elimDynamic ::
-     (forall a. Typeable a =>
-                  a -> r)
-  -> Dynamic
-  -> r
+elimDynamic :: (forall a. Typeable a => a -> r) -> Dynamic -> r
 elimDynamic f (Dynamic a) = f a
 
 fromDynamic :: Typeable a => Dynamic -> Maybe a
@@ -67,13 +66,14 @@ liftD2 d1 d2 f = fmap Dynamic . f <$> fromDynamic @a d1 <*> fromDynamic @b d2
 
 pyPlus :: Dynamic -> Dynamic -> Dynamic
 pyPlus a b =
-  fromMaybe (error "bad types for pyPlus") $
-  asum
-    [ liftD2 @String @String a b (++)
-    , liftD2 @Int @Int a b (+)
-    , liftD2 @String @Int a b $ \strA intB -> strA ++ show intB
-    , liftD2 @Int @String a b $ \intA strB -> show intA ++ strB
-    ]
+  fromMaybe (error "bad types for pyPlus")
+    $ asum
+        [ liftD2 @String @String a b (++)
+        , liftD2 @Int @Int a b (+)
+        , liftD2 @String @Int a b $ \strA intB -> strA ++ show intB
+        , liftD2 @Int @String a b $ \intA strB -> show intA ++ strB
+        ]
+
 
 -- dynamically typed languages are merely strongly typed languages with a single type.
 --
@@ -86,6 +86,7 @@ type HasShow' = Has Show
 
 type Dynamic' = Has Typeable
 
+
 -- 类型的多个typeclass的 constraint
 -- 错误方式：将会有错误
 -- type MonoidAndEq a = (Monoid a, Eq a)
@@ -93,7 +94,6 @@ type Dynamic' = Has Typeable
 -- 如下正确使用方式是：constraint synonym
 class (Monoid a, Eq a) =>
       MonoidEq a
-
 
 instance (Monoid a, Eq a) => MonoidEq a
 

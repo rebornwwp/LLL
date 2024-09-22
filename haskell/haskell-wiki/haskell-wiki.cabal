@@ -50,10 +50,6 @@ library
       ExprMonad
       ExprNormal
       Extensions.Kinds
-      FFI.First
-      FFI.Hello_FFI.FfiEx
-      FFI.Hello_FFI.Termios
-      FFI.Second
       FmtDemo.FmtDemo
       FunctorApplicativeMonad.Applicative.A
       FunctorApplicativeMonad.Applicative.IdiomLite
