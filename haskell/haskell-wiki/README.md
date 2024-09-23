@@ -44,6 +44,10 @@
 
 [introduction](https://wiki.haskell.org/Foreign_Function_Interface)
 
+### LANGUAGE
+
+[函数apply的名字替换](https://www.schoolofhaskell.com/user/edwardk/bound)
+
 TODO:
 
 1. IOREF

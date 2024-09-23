@@ -34,6 +34,7 @@ library
       Basic.Lazy
       Basic.Routine
       Basic.StringDemo
+      Basic.SumTypesAndProductTypes
       Basic.Tricks
       Basic.Unit
       Benchmark.BenchmarkExample
@@ -42,6 +43,9 @@ library
       CompileTimeEvaluation.CompileTimeEvaluation
       CompileTimeEvaluation.Result
       CoreLanguage.Ast
+      DesignPattern.ExpressionProblem.Datatypesàlacarte
+      DesignPattern.ExpressionProblem.FinallyTagless
+      DesignPattern.ExpressionProblem.FinallyTaglessExercise
       EnumEq
       EnumEqMain
       ExceptionDemo.ArithException
