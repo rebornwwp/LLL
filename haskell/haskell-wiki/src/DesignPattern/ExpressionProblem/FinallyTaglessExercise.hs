@@ -41,7 +41,7 @@ instance Language Eval
   before e    = Eval $ \(a, h) -> eval e h
   lambda e1   = Eval $ \h a -> eval e1 (a, h)
   apply e1 e2 = Eval $ \h -> (eval e1 h) (eval e2 h)
-  loop f      = Eval $ \h -> fx (eval f h)
+  loop e      = Eval $ \h -> fx (eval e h)
     where
       fx f   = f (fx f)
   int x      = Eval $ const x
