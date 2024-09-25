@@ -2,7 +2,7 @@
 {-# LANGUAGE GADTs                #-}
 {-# LANGUAGE TypeSynonymInstances #-}
 
-module DesignPattern.ExpressionProblem.ExpressionProblem where
+module DesignPattern.ExpressionProblem.FinallyTagless where
 
 
 -- https://zhuanlan.zhihu.com/p/626910231

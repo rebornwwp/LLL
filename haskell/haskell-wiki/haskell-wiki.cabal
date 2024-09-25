@@ -43,7 +43,8 @@ library
       CompileTimeEvaluation.CompileTimeEvaluation
       CompileTimeEvaluation.Result
       CoreLanguage.Ast
-      DesignPattern.ExpressionProblem.Datatypesàlacarte
+      DesignPattern.ExpressionProblem.A
+      DesignPattern.ExpressionProblem.ALaCarte
       DesignPattern.ExpressionProblem.FinallyTagless
       DesignPattern.ExpressionProblem.FinallyTaglessExercise
       EnumEq
@@ -66,7 +67,6 @@ library
       FunctorApplicativeMonad.Monads.StateExample
       FunctorApplicativeMonad.Monads.WriterLib
       HelloWorld.A
-      HelloWorld.ALaCarte
       HelloWorld.CD1
       HTTPDemo.Demo
       JSONDemo.JsonDemo

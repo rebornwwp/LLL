@@ -1,15 +1,18 @@
 {-# LANGUAGE DeriveFunctor         #-}
 {-# LANGUAGE FlexibleContexts      #-}
 {-# LANGUAGE FlexibleInstances     #-}
+{-# LANGUAGE InstanceSigs          #-}
+{-# LANGUAGE LambdaCase            #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE OverlappingInstances  #-}
+{-# LANGUAGE ScopedTypeVariables   #-}
+{-# LANGUAGE TypeApplications      #-}
 {-# LANGUAGE TypeOperators         #-}
 
-module HelloWorld.ALaCarte where
+module DesignPattern.ExpressionProblem.ALaCarte where
 
 
 -- Definitions
-data Expr f =
+newtype Expr f =
   In (f (Expr f))
 
 
@@ -24,7 +27,7 @@ data Add a =
 
 
 -- Coproduct
-data (f :+: g) e
+data (:+:) f g e
   = Inl (f e)
   | Inr (g e)
 
@@ -91,7 +94,7 @@ pain = In (Inr (Add (In (Inl (Lit 5))) (In (Inl (Lit 6)))))
 -- Then the type class can be viewed as searching for the correct injection by
 -- searching through the list for the correct type.
 class (Functor sub, Functor sup) =>
-      sub :<: sup
+      (sub :<: sup)
   where
   inj :: sub a -> sup a
 

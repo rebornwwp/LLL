@@ -173,3 +173,8 @@ something i b = SomeTypeWithoutItsFxns { unexportedMember1 = i
                                        , unexportedMember2 = b
                                        }
 ```
+
+### Type theory
+
+[TAPL](https://plfa.github.io/)
+[Programming Language Foundations in Agda](https://plfa.github.io/)
