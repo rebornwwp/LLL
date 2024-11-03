@@ -96,6 +96,8 @@ library
       SafeHaskell
       SQLParser
       TestA
+      Topics.AutoDiff.Backwardmode
+      Topics.AutoDiff.ForwardMode
       TraceExample
       TypeInferenceExample
       TypeLevelProgramming.CoerceTypes

@@ -178,3 +178,8 @@ something i b = SomeTypeWithoutItsFxns { unexportedMember1 = i
 
 [TAPL](https://plfa.github.io/)
 [Programming Language Foundations in Agda](https://plfa.github.io/)
+
+### software design
+
+[Software design](https://github.com/graninas/software-design-in-haskell)
+
