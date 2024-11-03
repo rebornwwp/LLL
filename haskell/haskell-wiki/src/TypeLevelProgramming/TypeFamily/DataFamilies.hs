@@ -1,6 +1,10 @@
-{-# LANGUAGE TypeFamilies #-}
+{-# LANGUAGE StandaloneKindSignatures #-}
+{-# LANGUAGE TypeFamilies             #-}
 
 module TypeLevelProgramming.TypeFamily.DataFamilies where
+
+import           Control.Monad.Identity (Identity (Identity))
+import           Data.Kind              (Type)
 
 
 -- we define new data types for every instance. Data families are always open. There is no closed variant.
@@ -14,9 +18,11 @@ data family XList a
 -- Bool -> XBits Integer Integer
 -- 如果是regular haskell，一种数据类型只对用一种data constructor
 -- 思考：data family， 表示不同的数据表示具有某一相同的数据性质
-data instance  XList () = XListUnit Integer
+data instance XList () =
+  XListUnit Integer
 
-data instance  XList Bool = XBits Integer Integer
+data instance XList Bool =
+  XBits Integer Integer
 
 
 -- XListUnit and XBits are data constructors that create values of XList () and XList Bool, respectively
@@ -37,10 +43,10 @@ instance XListable Bool
   xempty = XBits 0 0
   xcons b (XBits bits n) =
     XBits
-      (bits * 2 +
-       if b
-         then 1
-         else 0)
+      (bits * 2
+         + if b
+             then 1
+             else 0)
       (n + 1)
   xheadMay (XBits bits n)
     | n <= 0    = Nothing
@@ -48,9 +54,13 @@ instance XListable Bool
 
 testXList :: (Eq a, XListable a) => a -> Bool
 testXList a = xheadMay (xcons a xempty) == Just a
+
+
 -- >>> testXList ()
 -- True
+
 -- >>> testXList True
 -- True
+
 -- >>> testXList False
 -- True
