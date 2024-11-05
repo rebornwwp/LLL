@@ -137,6 +137,7 @@ library
     , extra
     , filepath
     , fmt
+    , free
     , http-client
     , http-conduit
     , mtl
@@ -172,6 +173,7 @@ executable haskell-wiki-exe
     , extra
     , filepath
     , fmt
+    , free
     , haskell-wiki
     , http-client
     , http-conduit
@@ -208,6 +210,7 @@ executable http-demo-exe
     , extra
     , filepath
     , fmt
+    , free
     , haskell-wiki
     , http-client
     , http-conduit
@@ -247,6 +250,7 @@ test-suite haskell-wiki-test
     , extra
     , filepath
     , fmt
+    , free
     , haskell-wiki
     , http-client
     , http-conduit

@@ -46,6 +46,7 @@ dependencies:
 - http-client
 - directory
 - filepath
+- free
 
 ghc-options:
 - -Wall
