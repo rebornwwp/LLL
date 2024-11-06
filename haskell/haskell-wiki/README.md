@@ -182,3 +182,9 @@ something i b = SomeTypeWithoutItsFxns { unexportedMember1 = i
 ### software design
 
 [Software design ****](https://github.com/graninas/software-design-in-haskell)
+
+https://github.com/thma/WhyHaskellMatters
+https://github.com/thma/LtuPatternFactory/tree/master
+https://markkarpov.com/learn-haskell
+
+[能力矩阵](https://gist.github.com/graninas/833a9ff306338aefec7e543100c16ea1)
