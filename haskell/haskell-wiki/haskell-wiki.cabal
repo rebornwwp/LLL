@@ -50,7 +50,9 @@ library
       EnumEq
       EnumEqMain
       ExceptionDemo.ArithException
+      Exercise.A
       Exercise.AAddBEqualBAddA
+      Exercise.B
       Exercise.OddsAndEvens
       ExprMonad
       ExprNormal

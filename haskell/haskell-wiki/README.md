@@ -188,3 +188,11 @@ https://github.com/thma/LtuPatternFactory/tree/master
 https://markkarpov.com/learn-haskell
 
 [能力矩阵](https://gist.github.com/graninas/833a9ff306338aefec7e543100c16ea1)
+
+#### design pattern
+
+[service pattern](https://www.schoolofhaskell.com/user/meiersi/the-service-pattern)
+
+## misc
+
+[shoolofhaskell](https://www.schoolofhaskell.com/)
