@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 use std::fmt::Debug;
+mod two_sum;
 
 const A_GLOBAL: i32 = 10;
 
