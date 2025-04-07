@@ -56,6 +56,17 @@ void dotLauncher(int *res, const int *a, const int *b, int n) {
   cudaFree(d_b);
 }
 
+// 还可以通过shared memory 来优化这个函数
+__global__ void histo_kernel(unsigned char *buffer, long size,
+                             unsigned int *histo) {
+  int i = threadIdx.x + blockDim.x * blockIdx.x;
+  int stride = blockDim.x * gridDim.x;
+  while (i < size) {
+    atomicAdd(&(histo[buffer[i]]), 1);
+    i += stride;
+  }
+}
+
 int main() {
   int cpu_res = 0;
   int gpu_res = 0;

@@ -34,8 +34,9 @@ __global__ void index_1D() {
 // https://developer.nvidia.com/blog/cuda-pro-tip-write-flexible-kernels-grid-stride-loops/
 __global__ void index_1D_grid_stride() {
   int n = 100;
-  for (int i = blockIdx.x * blockDim.x + threadIdx.x; i < n;
-       i += blockDim.x * gridDim.x) {
+  int tid = threadIdx.x + blockIdx.x * blockDim.x;  // 全局索引
+  int stride = blockDim.x * gridDim.x;              // 总线程数
+  for (int i = tid; i < n; i += stride) {
     // operate on index i
     // 这里整体数据，切分成部分并行， 每个并行逻辑中有loop的逻辑
     // TODO: grid stride for 2D and 3D
