@@ -1,1 +1,0 @@
-add_executable(basic_exception basic_exception.cpp)

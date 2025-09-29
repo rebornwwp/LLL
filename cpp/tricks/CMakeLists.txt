@@ -1,3 +1,0 @@
-add_executable(value_initialization value_initialization.cpp)
-add_executable(array_pointer array_pointer.cpp)
-add_executable(constexpr_const constexpr_const.cpp)

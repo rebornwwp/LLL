@@ -1,1 +1,0 @@
-add_executable(thrust_vector thrust_vector.cu)
