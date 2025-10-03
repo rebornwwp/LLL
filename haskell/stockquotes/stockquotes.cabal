@@ -1,0 +1,108 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           stockquotes
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/stockquotes#readme>
+homepage:       https://github.com/githubuser/stockquotes#readme
+bug-reports:    https://github.com/githubuser/stockquotes/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2023 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/stockquotes
+
+library
+  exposed-modules:
+      Abc
+      Charts
+      HtmlReport
+      Params
+      QuoteData
+      StatReport
+  other-modules:
+      Paths_stockquotes
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      Chart
+    , Chart-diagrams
+    , base >=4.7 && <5
+    , blaze-colonnade
+    , blaze-html
+    , bytestring
+    , cassava
+    , colonnade
+    , containers
+    , fmt
+    , lens
+    , mtl
+    , optparse-applicative
+    , text
+    , time
+  default-language: Haskell2010
+
+executable stockquotes-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_stockquotes
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Chart
+    , Chart-diagrams
+    , base >=4.7 && <5
+    , blaze-colonnade
+    , blaze-html
+    , bytestring
+    , cassava
+    , colonnade
+    , containers
+    , fmt
+    , lens
+    , mtl
+    , optparse-applicative
+    , stockquotes
+    , text
+    , time
+  default-language: Haskell2010
+
+test-suite stockquotes-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_stockquotes
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Chart
+    , Chart-diagrams
+    , base >=4.7 && <5
+    , blaze-colonnade
+    , blaze-html
+    , bytestring
+    , cassava
+    , colonnade
+    , containers
+    , fmt
+    , lens
+    , mtl
+    , optparse-applicative
+    , stockquotes
+    , text
+    , time
+  default-language: Haskell2010

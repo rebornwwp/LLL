@@ -1,0 +1,28 @@
+	Fri Sep 22 01:18 2023 Time and Allocation Profiling Report  (Final)
+
+	   a +RTS -P -RTS
+
+	total time  =        0.18 secs   (178 ticks @ 1000 us, 1 processor)
+	total alloc = 792,054,432 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE SRC                 %time %alloc  ticks     bytes
+
+g           Main   a.hs:(9,1)-(11,14)   89.9   90.9    160 720003680
+f           Main   a.hs:(4,1)-(6,14)    10.1    9.1     18  72011880
+
+
+                                                                         individual      inherited
+COST CENTRE  MODULE                SRC                no.     entries  %time %alloc   %time %alloc  ticks     bytes
+
+MAIN         MAIN                  <built-in>         127           0    0.0    0.0   100.0  100.0      0       640
+ CAF         Main                  <entire-module>    253           0    0.0    0.0    99.4  100.0      0       176
+  f          Main                  a.hs:(4,1)-(6,14)  256           1   10.1    9.1    10.1    9.1     18  72000264
+  g          Main                  a.hs:(9,1)-(11,14) 258           1   89.3   90.9    89.3   90.9    159 720000304
+  main       Main                  a.hs:(14,1)-(16,3) 254           1    0.0    0.0     0.0    0.0      0         0
+ CAF         GHC.Conc.Signal       <entire-module>    248           0    0.0    0.0     0.0    0.0      0       640
+ CAF         GHC.IO.Encoding       <entire-module>    238           0    0.0    0.0     0.0    0.0      0      2448
+ CAF         GHC.IO.Encoding.Iconv <entire-module>    236           0    0.0    0.0     0.0    0.0      0       200
+ CAF         GHC.IO.Handle.FD      <entire-module>    228           0    0.0    0.0     0.0    0.0      0     34736
+ main        Main                  a.hs:(14,1)-(16,3) 255           0    0.0    0.0     0.6    0.0      0        32
+  f          Main                  a.hs:(4,1)-(6,14)  257           0    0.0    0.0     0.0    0.0      0     11616
+  g          Main                  a.hs:(9,1)-(11,14) 259           0    0.6    0.0     0.6    0.0      1      3376

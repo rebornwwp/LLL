@@ -1,0 +1,5 @@
+4
+Masha 12
+Masha -5
+Sasha 10
+Masha 3
