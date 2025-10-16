@@ -50,3 +50,10 @@ const Token = struct {
     tokenTp: TokenType,
     literal: []const u8,
 };
+
+pub fn newToken(tk: TokenType, l: []const u8) Token {
+    return .{
+        .tokenTp = tk,
+        .literal = l,
+    };
+}
