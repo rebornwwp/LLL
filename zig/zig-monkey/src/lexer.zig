@@ -2,6 +2,7 @@ const Lexer = @This();
 
 const std = @import("std");
 const token = @import("./token.zig");
+const newToken = token.newToken;
 
 allocator: std.mem.Allocator,
 input: []const u8,
@@ -18,11 +19,48 @@ fn isDigit(c: u8) bool {
 }
 
 pub fn init(input: []const u8) Lexer {
-    return Lexer{ .input = input };
+    const l = Lexer{ .input = input };
+    l.readChar();
+    return l;
 }
 
 pub fn nextToken(l: *Lexer) token.Token {
-    _ = l;
+    var tk: token.Token = .{};
+    l.skipWhiteSpace();
+    switch (l.ch) {
+        '+' => return newToken(token.PLUS, "+"),
+        '-' => return newToken(token.MINUS, "-"),
+        '*' => return newToken(token.ASTERISK, "*"),
+        '/' => return newToken(token.SLASH, "/"),
+        '=' => {
+            if (l.peakChar() == '=') {
+                l.readChar();
+                return newToken(token.EQ, "==");
+            }
+            return newToken(token.ASSIGN, "=");
+        },
+        '!' => {
+            if (l.peakChar() == '=') {
+                l.readChar();
+                return newToken(token.NOTEQ, "!=");
+            }
+            return newToken(token.BANG, "!");
+        },
+        '<' => return newToken(token.LT, "<"),
+        '>' => return newToken(token.GT, ">"),
+        ',' => return newToken(token.COMMA, ","),
+        ';' => return newToken(token.SEMICOLON, ";"),
+        '(' => return newToken(token.LPAREN, "("),
+        ')' => return newToken(token.RPAREN, ")"),
+        '{' => return newToken(token.LBRACE, "{"),
+        '}' => return newToken(token.RBRACE, "}"),
+        '"' => return newToken(token.STRING, l.readString()),
+        ''
+        else => {
+            tk.literal = "hello";
+        },
+    }
+    return tk;
 }
 
 pub fn readChar(l: *Lexer) void {
@@ -34,19 +72,37 @@ pub fn readChar(l: *Lexer) void {
     l.readPosition += 1;
 }
 
-pub fn peakChar(l: *Lexer) void {
-    _ = l;
+pub fn peakChar(l: *Lexer) u8 {
+    if (l.readPosition >= l.input.len) {
+        return 0;
+    }
+    return l.input[l.readPosition];
 }
 
-pub fn readIdentifier(l: *Lexer) token.Token {
-    _ = l;
+pub fn readIdentifier(l: *Lexer) []const u8 {
+    const position = l.position;
+    while (isLetter(l.ch)) {
+        l.readChar();
+    }
+    return l.input[position..l.position];
 }
 
-pub fn readNumber(l: *Lexer) token.Token {
-    _ = l;
+pub fn readNumber(l: *Lexer) []const u8 {
+    const position = l.position;
+    while (isDigit(l.ch)) {
+        l.readChar();
+    }
+    return l.input[position..l.position];
 }
-pub fn readString(l: *Lexer) token.Token {
-    _ = l;
+pub fn readString(l: *Lexer) []const u8 {
+    const position = l.position + 1;
+    while (true) {
+        l.readChar();
+        if (l.ch == '"' or l.ch == 0) {
+            break;
+        }
+    }
+    return l.input[position..l.position];
 }
 
 pub fn skipWhiteSpace(l: *Lexer) void {
