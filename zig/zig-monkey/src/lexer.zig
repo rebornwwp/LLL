@@ -9,6 +9,7 @@ input: []const u8,
 position: usize,
 readPosition: usize,
 ch: u8,
+tokenMap: token.KeyWords,
 
 fn isLetter(c: u8) bool {
     return ('a' <= c and c <= 'z') || ('A' <= c and c <= 'Z') || c == '_';
@@ -25,7 +26,6 @@ pub fn init(input: []const u8) Lexer {
 }
 
 pub fn nextToken(l: *Lexer) token.Token {
-    var tk: token.Token = .{};
     l.skipWhiteSpace();
     switch (l.ch) {
         '+' => return newToken(token.PLUS, "+"),
@@ -55,12 +55,23 @@ pub fn nextToken(l: *Lexer) token.Token {
         '{' => return newToken(token.LBRACE, "{"),
         '}' => return newToken(token.RBRACE, "}"),
         '"' => return newToken(token.STRING, l.readString()),
-        ''
+        '[' => return newToken(token.LBRACKET, "["),
+        ']' => return newToken(token.RBRACKET, "]"),
+        ':' => return newToken(token.COLON, ":"),
         else => {
-            tk.literal = "hello";
+            if (isLetter(l.ch)) {
+                const ident = l.readIdentifier();
+                const tkType = l.tokenMap.LookupKey(ident);
+                return newToken(tkType, ident);
+            } else if (isDigit(l.ch)) {
+                const num = l.readNumber();
+                return newToken(token.INT, num);
+            }
+
+            return newToken(token.ILLEGAL, "");
         },
     }
-    return tk;
+    l.readChar();
 }
 
 pub fn readChar(l: *Lexer) void {
