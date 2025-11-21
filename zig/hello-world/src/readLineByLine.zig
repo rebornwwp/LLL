@@ -1,7 +1,7 @@
 const std = @import("std");
 const fs = std.fs;
 const print = std.debug.print;
-
+// https://git.memzero.de/testground/zig-playground/tree/example-writergate/file.zig
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = gpa.deinit();
