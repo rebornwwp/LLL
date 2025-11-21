@@ -35,7 +35,7 @@ pub fn main() !void {
 
     // Serialize JSON
     value.verified = false;
-    const new_json_str = try json.stringifyAlloc(allocator, value, .{ .whitespace = .indent_2 });
+    const new_json_str = try json.Stringify.valueAlloc(allocator, value, .{ .whitespace = .indent_2 });
     defer allocator.free(new_json_str);
 
     try testing.expectEqualStrings(
@@ -50,4 +50,5 @@ pub fn main() !void {
     ,
         new_json_str,
     );
+    std.debug.print("debug:\n {s}\n", .{new_json_str});
 }
