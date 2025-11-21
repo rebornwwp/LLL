@@ -15,13 +15,13 @@ pub fn main() !void {
     // stdout is for the actual output of your application, for example if you
     // are implementing gzip, then only the compressed bytes should be sent to
     // stdout, not any debugging messages.
-    const stdout_file = std.io.getStdOut().writer();
-    var bw = std.io.bufferedWriter(stdout_file);
-    const stdout = bw.writer();
 
+    var stdout_buffer: [1024]u8 = undefined;
+    var stdout_writer = std.fs.File.stdout().writer(&stdout_buffer);
+    const stdout = &stdout_writer.interface;
     try stdout.print("Run `zig build test` to run the tests.\n", .{});
+    try stdout.flush(); // Don't forget to flush!
 
-    try bw.flush(); // Don't forget to flush!
     const matrix_4x4 = [4][4]f32{
         [_]f32{ 1.0, 0.0, 0.0, 0.0 },
         [_]f32{ 0.0, 1.0, 0.0, 1.0 },
