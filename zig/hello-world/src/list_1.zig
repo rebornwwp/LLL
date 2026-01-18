@@ -20,6 +20,13 @@ pub fn main() !void {
 
     try l.insert(allocator, 0, 9);
 
+    const sub_l1 = l.addManyAsArrayAssumeCapacity(2);
+    sub_l1[0] = 7;
+    sub_l1[1] = 8;
+    const sub_l2 = try l.addManyAsArrayBounded(2);
+    sub_l2[0] = 17;
+    sub_l2[1] = 18;
+
     for (l.items, 0..) |item, index| {
         std.debug.print("index: {d}, item: {d}\n", .{ index, item });
     }
