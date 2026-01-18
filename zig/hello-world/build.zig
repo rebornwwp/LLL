@@ -99,15 +99,15 @@ pub fn build(b: *std.Build) void {
     });
     b.installArtifact(exe_json_1);
 
-    const mmap_1_2 = b.addExecutable(.{
-        .name = "mmap_1_2",
-        .root_module = b.createModule(.{
-            .root_source_file = b.path("src/mmap_1_2.zig"),
-            .target = target,
-            .optimize = optimize,
-        }),
-    });
-    b.installArtifact(mmap_1_2);
+    // const mmap_1_2 = b.addExecutable(.{
+    //     .name = "mmap_1_2",
+    //     .root_module = b.createModule(.{
+    //         .root_source_file = b.path("src/mmap_1_2.zig"),
+    //         .target = target,
+    //         .optimize = optimize,
+    //     }),
+    // });
+    // b.installArtifact(mmap_1_2);
     const readLineByLine = b.addExecutable(.{
         .name = "readLineByLine",
         .root_module = b.createModule(.{
@@ -148,15 +148,15 @@ pub fn build(b: *std.Build) void {
     });
     b.installArtifact(file_1_5);
 
-    const net_4_1 = b.addExecutable(.{
-        .name = "net_4_1",
-        .root_module = b.createModule(.{
-            .root_source_file = b.path("src/net_4_1.zig"),
-            .target = target,
-            .optimize = optimize,
-        }),
-    });
-    b.installArtifact(net_4_1);
+    // const net_4_1 = b.addExecutable(.{
+    //     .name = "net_4_1",
+    //     .root_module = b.createModule(.{
+    //         .root_source_file = b.path("src/net_4_1.zig"),
+    //         .target = target,
+    //         .optimize = optimize,
+    //     }),
+    // });
+    // b.installArtifact(net_4_1);
     // This creates a top level step. Top level steps have a name and can be
     // invoked by name when running `zig build` (e.g. `zig build run`).
     // This will evaluate the `run` step rather than the default step.
