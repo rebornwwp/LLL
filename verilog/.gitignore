@@ -1,0 +1,6 @@
+# iverilog / vvp 编译与仿真产物
+/counter
+/hello
+a.out
+*.vvp
+*.vcd
